@@ -7,14 +7,12 @@ export default function LogoSlider() {
   const [isPaused, setIsPaused] = useState(false);
 
   const certificates = [
-    { name: 'ISHRS', logo: '/certificates/ishrs.png' },
-    { name: 'AAAM', logo: '/certificates/aaam.png' },
-    { name: 'AIMI', logo: '/certificates/aimi.png' },
-    { name: 'IADVL', logo: '/certificates/iadl.png' },
-    { name: 'CDSI', logo: '/certificates/cdsi.png' },
-    { name: 'ACD', logo: '/certificates/acd.png' },
-    { name: 'Partner 1', logo: '/certificates/partner1.png' },
-    { name: 'Partner 2', logo: '/certificates/partner2.png' },
+    { name: 'ISHRS', logo: 'https://31stannual.org/wp-content/uploads/2023/01/ishrs-logo-min.png' },
+    { name: 'AAAM', logo: 'https://www.bostrom.com/wp-content/uploads/2021/04/AAAM_Logo_RGB_2016-380x285-1.jpg' },
+    { name: 'AIMI', logo: 'https://mma.prnewswire.com/media/1172541/AiMi_Logo_dark__1_Logo.jpg?p=facebook' },
+    { name: 'IADVL', logo: 'https://www.vhv.rs/dpng/d/46-461064_indian-association-of-dermatologists-venereologists-hd-png-download.png' },
+    { name: 'CDSI', logo: 'https://www.cdsi-simi.com/wp-content/uploads/2022/04/blue-logo.png' },
+    { name: 'ACD', logo: 'https://www.creativefabrica.com/wp-content/uploads/2019/07/Monogram-ACD-Logo-Design-by-Greenlines-Studios.jpg' },
   ];
 
   const duplicatedCertificates = [...certificates, ...certificates];
