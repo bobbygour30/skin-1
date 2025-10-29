@@ -1,59 +1,68 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaUsers, FaStar, FaCheckCircle, FaHospital } from "react-icons/fa";
+import {
+  LuAward,
+  LuUsers,
+  LuShieldCheck,
+  LuHospital,
+} from "react-icons/lu";
+import { PiStarThin } from "react-icons/pi";
 
 const stats = [
-  { label: "23+ Years Experience", icon: FaUsers },
-  { label: "1,200+ Global Reviews (4.9★)", icon: FaStar },
-  { label: "IADVL & ACD Accredited", icon: FaCheckCircle },
-  { label: "Class-100 OTs", icon: FaHospital },
+  { label: "23+ Years of Medical Excellence", icon: LuAward },
+  { label: "1,200+ Global Reviews (4.9★)", icon: PiStarThin },
+  { label: "IADVL & ACD Accredited", icon: LuShieldCheck },
+  { label: "Class-100 Operation Theatres", icon: LuHospital },
 ];
 
-const ShowCase = () => {
+export default function ShowCase() {
   return (
-    <section className="relative bg-linear-to-br from-white via-amber-50 to-white py-20 px-8 md:px-20 rounded-3xl max-w-7xl mx-auto my-20 overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.15)]">
-      {/* Subtle golden light accents */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.08),transparent_60%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(212,175,55,0.08),transparent_60%)]"></div>
+    <section className="relative py-24 px-6 md:px-20  overflow-hidden">
+      {/* Background gradients */}
+      <div className="absolute inset-0 bg-linear-to-br from-[#faf7f2] via-white to-[#fff9ed]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(212,175,55,0.15),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_90%,rgba(212,175,55,0.08),transparent_70%)]" />
 
-      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 text-center z-10">
-        {stats.map(({ label, icon: Icon }, index) => (
+      {/* Grid content */}
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 z-10 max-w-7xl mx-auto">
+        {stats.map(({ label, icon: Icon }, i) => (
           <motion.div
-            key={index}
-            className="flex flex-col items-center space-y-5 p-6 rounded-2xl bg-white/70 backdrop-blur-sm shadow-[0_8px_25px_rgba(212,175,55,0.1)] hover:shadow-[0_12px_35px_rgba(212,175,55,0.25)] transition-all duration-500"
+            key={i}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{
-              delay: index * 0.3,
+              delay: i * 0.15,
               type: "spring",
               stiffness: 100,
             }}
             whileHover={{
-              scale: 1.07,
-              y: -5,
-              transition: { type: "spring", stiffness: 250 },
+              y: -8,
+              scale: 1.04,
+              transition: { type: "spring", stiffness: 200 },
             }}
-            whileTap={{ scale: 0.97 }}
+            className="group relative p-8 rounded-3xl bg-white/60 backdrop-blur-xl border border-[#e8dcc2]/60 shadow-[0_8px_25px_rgba(212,175,55,0.12)] hover:shadow-[0_12px_40px_rgba(212,175,55,0.25)] transition-all duration-500"
           >
-            {/* Icon glow animation */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-linear-to-br from-[#fff4d9]/40 to-white rounded-3xl" />
+
+            {/* Icon section */}
             <motion.div
-              className="p-6 rounded-full bg-linear-to-tr from-amber-200 via-amber-300 to-amber-100 text-amber-800 shadow-[0_0_25px_rgba(212,175,55,0.3)]"
               animate={{
-                scale: [1, 1.12, 1],
+                rotate: [0, 3, -3, 0],
               }}
               transition={{
                 repeat: Infinity,
-                duration: 3.5,
+                duration: 6,
                 ease: "easeInOut",
-                delay: index * 0.3,
+                delay: i * 0.2,
               }}
+              className="relative z-10 mb-5 flex items-center justify-center w-20 h-20 rounded-full bg-linear-to-br from-[#f3e3b1] via-[#e8d28b] to-[#fff9ed] shadow-[0_0_20px_rgba(212,175,55,0.35)] text-[#7b652d]"
             >
-              <Icon size={40} />
+              <Icon size={38} />
             </motion.div>
 
             {/* Label */}
-            <p className="text-gray-800 font-semibold text-sm md:text-base tracking-wide">
+            <p className="relative z-10 text-[#3a2d14] font-medium text-base md:text-lg tracking-wide leading-snug">
               {label}
             </p>
           </motion.div>
@@ -61,6 +70,4 @@ const ShowCase = () => {
       </div>
     </section>
   );
-};
-
-export default ShowCase;
+}

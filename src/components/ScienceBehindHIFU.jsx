@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function ScienceBehindHIFU({ imageSrc = "/skin-layers-diagram.jpg" }) {
+export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/free-vector/realistic-skin-structure-with-its-layers-hairs-vector-illustration_1284-68962.jpg" }) {
   const container = {
     hidden: { opacity: 0, y: 12 },
     show: { opacity: 1, y: 0, transition: { staggerChildren: 0.08 } },

@@ -13,7 +13,7 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-export default function HIFUFeatureComponent({ imageSrc = '/clinic-placeholder.jpg' }) {
+export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.com/free-photo/view-from-rejuvenation-beautiful-woman-enjoying-cosmetology-procedures-beauty-salon-dermatology-hands-blue-glows-healthcare-therapy-botox_197531-2783.jpg' }) {
   return (
     <section className="bg-linear-to-br from-white via-amber-50/40 to-white text-gray-900 py-20 px-6 sm:px-8 lg:px-16 relative overflow-hidden">
       {/* Soft gold glow */}

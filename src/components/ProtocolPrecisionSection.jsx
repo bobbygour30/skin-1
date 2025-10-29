@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function ProtocolPrecisionSection({ imageSrc = '/ultrasound-device.jpg' }) {
+export default function ProtocolPrecisionSection({ imageSrc = 'https://t4.ftcdn.net/jpg/01/34/13/91/360_F_134139194_RaH3m1Tc0qxLw9FiluKfiqK5b6xB142J.jpg' }) {
   const container = {
     hidden: { opacity: 0, y: 12 },
     show: { opacity: 1, y: 0, transition: { staggerChildren: 0.08 } },
@@ -60,11 +60,22 @@ export default function ProtocolPrecisionSection({ imageSrc = '/ultrasound-devic
           </motion.div>
 
           {/* Metrics */}
-          <motion.div variants={fadeUp} className="mt-10 flex gap-6 items-center flex-wrap">
-            <MetricBadge value="23+" label="Years" />
-            <MetricBadge value="Class-100" label="OTs" />
-            <MetricBadge value="40+" label="Countries" />
-          </motion.div>
+          {/* Metrics */}
+<motion.div
+  variants={fadeUp}
+  className="
+    mt-10 
+    flex flex-wrap 
+    justify-center sm:justify-start 
+    gap-4 sm:gap-6 
+    items-stretch
+  "
+>
+  <MetricBadge value="23+" label="Years" />
+  <MetricBadge value="Class-100" label="OTs" />
+  <MetricBadge value="40+" label="Countries" />
+</motion.div>
+
         </motion.div>
 
         {/* Right: Image + Animation */}

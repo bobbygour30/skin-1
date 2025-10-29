@@ -8,19 +8,19 @@ export default function HifuMediaShowcase() {
     {
       title: 'HIFU Live Demo',
       description: 'Watch an authentic treatment session performed by our expert dermatologists.',
-      thumbnail: '/media/hifu-demo.jpg', // replace with real image
+      thumbnail: 'https://media.istockphoto.com/id/501398614/photo/face-skin-care-facial-hydro-microdermabrasion-peeling-treatment.jpg?s=612x612&w=0&k=20&c=8sB-63Okl1ZlF1aHNRtJb7aVzf3qCezOnphkgnW_shY=',
       link: '#',
     },
     {
       title: 'Jawline Lift Case',
       description: 'Explore before-after progress and contour refinement through HIFU.',
-      thumbnail: '/media/jawline-lift.jpg',
+      thumbnail: 'https://media.allure.com/photos/66e1c5700f65602ac1573b07/16:9/w_3500,h_1969,c_limit/Nefertiti%20Lift.jpg',
       link: '#',
     },
     {
       title: 'Neck Tightening Tips',
       description: 'Post-procedure skincare insights for lasting lift and glow.',
-      thumbnail: '/media/neck-tips.jpg',
+      thumbnail: 'https://emface.net.nz/wp-content/uploads/2025/08/emface-banner-5.jpg',
       link: '#',
     },
   ];

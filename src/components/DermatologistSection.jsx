@@ -20,7 +20,7 @@ export default function DermatologistSection() {
         >
           {/* Floating animation */}
           <motion.img
-            src="/images/dr-shail-gupta.jpg"
+            src="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg"
             alt="Dr. Shail Gupta - Dermatologist at Satya"
             className="w-[90%] max-w-md rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] object-cover"
             animate={{ y: [0, -10, 0] }}

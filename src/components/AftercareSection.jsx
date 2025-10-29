@@ -73,7 +73,7 @@ export default function AftercareSection() {
         >
           {/* Floating animation */}
           <motion.img
-            src="/images/aftercare-glow.jpg"
+            src="https://plus.unsplash.com/premium_photo-1682096433084-b68c0cf072b8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2xvd2luZyUyMHNraW58ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000"
             alt="Aftercare glow illustration"
             className="w-[90%] max-w-md rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
             animate={{ y: [0, -12, 0] }}
