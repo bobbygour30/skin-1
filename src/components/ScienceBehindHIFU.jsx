@@ -12,7 +12,7 @@ export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/
   };
 
   return (
-    <section className="relative bg-linear-to-b from-[#faf7f2] via-[#fffaf6] to-[#f8f5f0] text-gray-900 py-24 px-6 sm:px-10 lg:px-20 overflow-hidden">
+    <section className="relative bg-linear-to-b from-[#faf7f2] via-[#fffaf6] to-[#f8f5f0] text-gray-900 py-10 px-6 sm:px-10 lg:px-20 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* LEFT SIDE: CONTENT */}
         <motion.div

@@ -32,7 +32,7 @@ export default function RealPeopleRealLift() {
   ];
 
   return (
-    <section className="relative bg-white py-24 px-6 md:px-16 lg:px-24 text-neutral-900 mt-10">
+    <section className="relative bg-white py-7 px-6 md:px-16 lg:px-24 text-neutral-900 mt-10">
       {/* Background Accent */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_30%,rgba(245,231,209,0.25),transparent_70%)] pointer-events-none" />
 

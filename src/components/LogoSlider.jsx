@@ -21,7 +21,7 @@ export default function LogoSlider() {
 
   return (
     <>
-      <div className="min-h-screen bg-linear-to-br from-white via-amber-50 to-white py-16 px-6 sm:px-8 lg:px-12">
+      <div className="min-h-screen bg-linear-to-br from-white via-amber-50 to-white py-10 px-6 sm:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left Content */}

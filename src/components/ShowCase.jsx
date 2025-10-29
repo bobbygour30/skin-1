@@ -17,7 +17,7 @@ const stats = [
 
 export default function ShowCase() {
   return (
-    <section className="relative py-24 px-6 md:px-20  overflow-hidden">
+    <section className="relative py-10 px-6 md:px-20  overflow-hidden">
       {/* Background gradients */}
       <div className="absolute inset-0 bg-linear-to-br from-[#faf7f2] via-white to-[#fff9ed]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(212,175,55,0.15),transparent_70%)]" />

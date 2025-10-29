@@ -12,7 +12,7 @@ export default function ProtocolPrecisionSection({ imageSrc = 'https://t4.ftcdn.
   };
 
   return (
-    <section className="bg-linear-to-br from-white via-amber-50/40 to-white text-gray-900 py-20 px-6 sm:px-10 lg:px-20 overflow-hidden">
+    <section className="bg-linear-to-br from-white via-amber-50/40 to-white text-gray-900 py-10 px-6 sm:px-10 lg:px-20 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         {/* Left Content */}
         <motion.div

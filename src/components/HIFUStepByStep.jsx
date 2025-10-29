@@ -45,7 +45,7 @@ export default function HIFUStepByStep() {
   ];
 
   return (
-    <section className="py-16 px-6 sm:px-10 lg:px-20 bg-linear-to-b from-white via-[#FFFBF7] to-white">
+    <section className="py-10 px-6 sm:px-10 lg:px-20 bg-linear-to-b from-white via-[#FFFBF7] to-white">
       <div className="max-w-6xl mx-auto">
         <header className="mb-8 text-center">
           <motion.h2

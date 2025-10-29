@@ -15,7 +15,7 @@ const fadeUp = {
 
 export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.com/free-photo/view-from-rejuvenation-beautiful-woman-enjoying-cosmetology-procedures-beauty-salon-dermatology-hands-blue-glows-healthcare-therapy-botox_197531-2783.jpg' }) {
   return (
-    <section className="bg-linear-to-br from-white via-amber-50/40 to-white text-gray-900 py-20 px-6 sm:px-8 lg:px-16 relative overflow-hidden">
+    <section className="bg-linear-to-br from-white via-amber-50/40 to-white text-gray-900 py-10 px-6 sm:px-8 lg:px-16 relative overflow-hidden">
       {/* Soft gold glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.15),transparent_70%)] -z-10"></div>
 

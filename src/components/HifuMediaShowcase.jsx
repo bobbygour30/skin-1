@@ -26,7 +26,7 @@ export default function HifuMediaShowcase() {
   ];
 
   return (
-    <section className="relative bg-white py-24 px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section className="relative bg-white py-10 px-6 md:px-16 lg:px-24 overflow-hidden">
       {/* Soft glow background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(245,231,209,0.3),transparent_70%)] pointer-events-none" />
 
