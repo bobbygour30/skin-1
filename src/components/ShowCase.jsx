@@ -17,14 +17,14 @@ const stats = [
 
 export default function ShowCase() {
   return (
-    <section className="relative py-10 px-6 md:px-20  overflow-hidden">
-      {/* Background gradients */}
-      <div className="absolute inset-0 bg-linear-to-br from-[#faf7f2] via-white to-[#fff9ed]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(212,175,55,0.15),transparent_70%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_90%,rgba(212,175,55,0.08),transparent_70%)]" />
+    <section className="relative py-10 px-6 md:px-20 overflow-hidden">
+      {/* === Background gradients (unchanged glow) === */}
+      <div className="absolute inset-0 bg-linear-to-br from-[#FFF8EF] via-[#FCEBDE] to-[#FFF8EF]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(184,124,114,0.15),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_90%,rgba(184,124,114,0.08),transparent_70%)]" />
 
-      {/* Grid content */}
-      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 z-10 max-w-7xl mx-auto">
+      {/* === Stats Grid === */}
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 z-10 max-w-7xl mx-auto">
         {stats.map(({ label, icon: Icon }, i) => (
           <motion.div
             key={i}
@@ -37,15 +37,16 @@ export default function ShowCase() {
               stiffness: 100,
             }}
             whileHover={{
-              y: -8,
-              scale: 1.04,
-              transition: { type: "spring", stiffness: 200 },
+              y: -6,
+              scale: 1.03,
+              transition: { type: "spring", stiffness: 180 },
             }}
-            className="group relative p-8 rounded-3xl bg-white/60 backdrop-blur-xl border border-[#e8dcc2]/60 shadow-[0_8px_25px_rgba(212,175,55,0.12)] hover:shadow-[0_12px_40px_rgba(212,175,55,0.25)] transition-all duration-500"
+            className="group relative p-5 sm:p-6 rounded-2xl bg-[#FFF8EF]/60 backdrop-blur-xl border border-[#DFDFDD]/60 shadow-[0_6px_25px_rgba(184,124,114,0.12)] hover:shadow-[0_10px_35px_rgba(184,124,114,0.25)] transition-all duration-500 flex items-center gap-4"
           >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-linear-to-br from-[#fff4d9]/40 to-white rounded-3xl" />
+            {/* Hover glow */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-linear-to-br from-[#FCEBDE]/40 to-[#FFF8EF] rounded-2xl" />
 
-            {/* Icon section */}
+            {/* Icon */}
             <motion.div
               animate={{
                 rotate: [0, 3, -3, 0],
@@ -56,13 +57,13 @@ export default function ShowCase() {
                 ease: "easeInOut",
                 delay: i * 0.2,
               }}
-              className="relative z-10 mb-5 flex items-center justify-center w-20 h-20 rounded-full bg-linear-to-br from-[#f3e3b1] via-[#e8d28b] to-[#fff9ed] shadow-[0_0_20px_rgba(212,175,55,0.35)] text-[#7b652d]"
+              className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-linear-to-br from-[#9E4A47] via-[#B87C72] to-[#9E4A47] shadow-[0_0_15px_rgba(184,124,114,0.35)] text-[#FFF8EF] shrink-0"
             >
-              <Icon size={38} />
+              <Icon size={22} />
             </motion.div>
 
             {/* Label */}
-            <p className="relative z-10 text-[#3a2d14] font-medium text-base md:text-lg tracking-wide leading-snug">
+            <p className="relative z-10 text-[#2B333C] font-medium text-sm sm:text-base leading-snug tracking-wide">
               {label}
             </p>
           </motion.div>

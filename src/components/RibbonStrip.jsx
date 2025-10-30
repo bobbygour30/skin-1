@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Luxurious Scrolling RibbonStrip
 export default function RibbonStrip() {
   const phrases = [
     "No Needles. No Downtime.",
@@ -27,9 +26,9 @@ export default function RibbonStrip() {
 
   return (
     <div className="w-full overflow-hidden relative">
-      {/* Background Ribbon with Soft Gold Gradient */}
+      {/* Background Ribbon with Theme Gradient */}
       <div className="absolute inset-0 -skew-y-1 transform-gpu">
-        <div className="h-20 md:h-24 w-full bg-linear-to-r from-[#d4b97b] via-[#bfa26a] to-[#e6cf94] shadow-2xl opacity-95" />
+        <div className="h-20 md:h-24 w-full bg-linear-to-r from-[#9E4A47] via-[#B87C72] to-[#9E4A47] shadow-[0_0_25px_rgba(158,74,71,0.4)] opacity-95" />
       </div>
 
       {/* Animated Text Layer */}
@@ -38,7 +37,7 @@ export default function RibbonStrip() {
           <div className="py-5 md:py-6">
             <div className="mx-4 md:mx-8 lg:mx-16 overflow-hidden rounded-md">
               <motion.div
-                className="whitespace-nowrap font-semibold text-sm md:text-base lg:text-lg tracking-wide leading-tight flex items-center skew-y-1 text-[#fffdf9]"
+                className="whitespace-nowrap font-semibold text-sm md:text-base lg:text-lg tracking-wide leading-tight flex items-center skew-y-1 text-[#FFF8EF]"
                 {...marquee}
                 aria-hidden
               >
@@ -54,11 +53,9 @@ export default function RibbonStrip() {
         </div>
       </div>
 
-      
-
       {/* Subtle Glow Animation */}
       <motion.div
-        className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent"
+        className="absolute inset-0 bg-linear-to-r from-transparent via-[#FFF8EF]/15 to-transparent"
         animate={{ x: ["-100%", "100%"] }}
         transition={{
           repeat: Infinity,

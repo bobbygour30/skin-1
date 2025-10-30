@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/free-vector/realistic-skin-structure-with-its-layers-hairs-vector-illustration_1284-68962.jpg" }) {
+export default function ScienceBehindHIFU({
+  imageSrc = "https://img.freepik.com/free-vector/realistic-skin-structure-with-its-layers-hairs-vector-illustration_1284-68962.jpg",
+}) {
   const container = {
     hidden: { opacity: 0, y: 12 },
     show: { opacity: 1, y: 0, transition: { staggerChildren: 0.08 } },
@@ -12,9 +14,9 @@ export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/
   };
 
   return (
-    <section className="relative bg-linear-to-b from-[#faf7f2] via-[#fffaf6] to-[#f8f5f0] text-gray-900 py-10 px-6 sm:px-10 lg:px-20 overflow-hidden">
+    <section className="relative bg-linear-to-b from-[#FFF8EF] via-[#FCEBDE]/60 to-[#FFF8EF] text-[#2B333C] py-10 px-6 sm:px-10 lg:px-20 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* LEFT SIDE: CONTENT */}
+        {/* LEFT SIDE */}
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -27,14 +29,14 @@ export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/
             className="text-3xl sm:text-4xl font-extrabold tracking-tight"
           >
             The Science Behind{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#c9a76a] via-[#e6cf94] to-[#b3915a]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#9E4A47] via-[#B87C72] to-[#DFDFDD]">
               HIFU
             </span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="text-gray-700 leading-relaxed max-w-xl"
+            className="text-[#2B333C]/80 leading-relaxed max-w-xl"
           >
             Focused ultrasound deposits thermal coagulation points at controlled
             depths to tighten the fibromuscular layer and trigger
@@ -43,7 +45,10 @@ export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/
           </motion.p>
 
           {/* KEY POINTS */}
-          <motion.ul variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-6">
+          <motion.ul
+            variants={fadeUp}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-6"
+          >
             {[
               "Targets SMAS & Deep Dermis",
               "Collagen Remodeling (3–6 months)",
@@ -54,9 +59,9 @@ export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/
                 key={i}
                 whileHover={{ scale: 1.04 }}
                 transition={{ type: "spring", stiffness: 250, damping: 18 }}
-                className="flex items-start gap-3 bg-white rounded-2xl shadow-md hover:shadow-lg p-4 border border-[#e5d8b9]/50"
+                className="flex items-start gap-3 bg-white rounded-2xl shadow-md hover:shadow-lg p-4 border border-[#DFDFDD]"
               >
-                <div className="w-5 h-5 mt-1 text-[#b3915a]">
+                <div className="w-5 h-5 mt-1 text-[#9E4A47]">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -71,7 +76,7 @@ export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/
                     />
                   </svg>
                 </div>
-                <span className="text-gray-800 text-sm">{point}</span>
+                <span className="text-[#2B333C] text-sm">{point}</span>
               </motion.li>
             ))}
           </motion.ul>
@@ -79,12 +84,12 @@ export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/
           {/* HIGHLIGHT BOX */}
           <motion.div
             variants={fadeUp}
-            className="mt-8 bg-white/90 rounded-2xl p-6 shadow-xl border border-[#f0e6d2]"
+            className="mt-8 bg-white/90 rounded-2xl p-6 shadow-xl border border-[#DFDFDD]"
           >
             <div className="flex items-center gap-5">
-              <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-linear-to-br from-[#f9f5ec] to-[#f0e6d2] shadow-inner">
+              <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-linear-to-br from-[#FCEBDE] to-[#FFF8EF] shadow-inner">
                 <svg
-                  className="w-6 h-6 text-[#b3915a]"
+                  className="w-6 h-6 text-[#9E4A47]"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
@@ -105,10 +110,10 @@ export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/
                 </svg>
               </div>
               <div>
-                <div className="font-semibold text-gray-900">
+                <div className="font-semibold text-[#2B333C]">
                   Collagen Remodeling Timeline
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-[#828D9C]">
                   Results strengthen between 3–6 months post-procedure.
                 </div>
               </div>
@@ -116,7 +121,7 @@ export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/
           </motion.div>
         </motion.div>
 
-        {/* RIGHT SIDE: IMAGE + EFFECTS */}
+        {/* RIGHT SIDE */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -124,7 +129,7 @@ export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/
           viewport={{ once: true, amount: 0.3 }}
           className="relative"
         >
-          <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-linear-to-br from-white to-[#f7f3eb] border border-[#f0e6d2]/60">
+          <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-linear-to-br from-white to-[#FFF8EF] border border-[#DFDFDD]">
             <motion.img
               src={imageSrc}
               alt="Skin layers diagram showing HIFU depth"
@@ -138,12 +143,12 @@ export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, type: "spring" }}
-              className="absolute left-6 top-6 bg-white/80 backdrop-blur-md rounded-xl px-4 py-2 shadow-md border border-[#e6d8b7]/60"
+              className="absolute left-6 top-6 bg-white/80 backdrop-blur-md rounded-xl px-4 py-2 shadow-md border border-[#DFDFDD]"
             >
-              <div className="text-xs font-semibold text-gray-900">
+              <div className="text-xs font-semibold text-[#2B333C]">
                 Skin Layer Visualization
               </div>
-              <div className="text-[11px] text-gray-600">
+              <div className="text-[11px] text-[#828D9C]">
                 Illustrates SMAS & dermal targets
               </div>
             </motion.div>
@@ -153,7 +158,7 @@ export default function ScienceBehindHIFU({ imageSrc = "https://img.freepik.com/
               {[1, 2, 3].map((i) => (
                 <motion.span
                   key={i}
-                  className="absolute w-12 h-12 rounded-full border border-[#c9a76a]/40"
+                  className="absolute w-12 h-12 rounded-full border border-[#B87C72]/50"
                   animate={{ scale: [1, 1.3, 1], opacity: [1, 0.3, 1] }}
                   transition={{
                     duration: 2.5 + i,

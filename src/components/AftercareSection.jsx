@@ -12,12 +12,12 @@ export default function AftercareSection() {
   ];
 
   return (
-    <section className="relative bg-white py-10 px-6 md:px-16 lg:px-24 overflow-hidden">
-      {/* Soft champagne glow background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(245,231,209,0.35),transparent_70%)] pointer-events-none" />
+    <section className="relative bg-[#FFF8EF] py-14 px-6 md:px-16 lg:px-24 overflow-hidden">
+      {/* Soft rose glow background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(252,235,222,0.6),transparent_70%)] pointer-events-none" />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-        {/* Right: Animated Image (will appear first on mobile) */}
+        {/* Image section */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -27,9 +27,9 @@ export default function AftercareSection() {
         >
           {/* Floating animation */}
           <motion.img
-            src="https://plus.unsplash.com/premium_photo-1682096433084-b68c0cf072b8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2xvd2luZyUyMHNraW58ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000"
+            src="https://plus.unsplash.com/premium_photo-1682096433084-b68c0cf072b8?ixlib=rb-4.1.0&fm=jpg&q=60&w=3000"
             alt="Aftercare glow illustration"
-            className="w-[90%] max-w-md rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
+            className="w-[90%] max-w-md rounded-3xl shadow-[0_8px_30px_rgba(158,74,71,0.2)]"
             animate={{ y: [0, -12, 0] }}
             transition={{
               duration: 6,
@@ -38,11 +38,11 @@ export default function AftercareSection() {
             }}
           />
 
-          {/* Soft light behind image */}
-          <div className="absolute -z-10 w-72 h-72 bg-amber-100/40 blur-3xl rounded-full top-1/2 -translate-y-1/2" />
+          {/* Soft rosy light behind image */}
+          <div className="absolute -z-10 w-72 h-72 bg-[#FCEBDE]/70 blur-3xl rounded-full top-1/2 -translate-y-1/2" />
         </motion.div>
 
-        {/* Left: Text Content (comes after image on mobile) */}
+        {/* Text content */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -50,13 +50,13 @@ export default function AftercareSection() {
           viewport={{ once: true }}
           className="order-2 lg:order-1"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold text-neutral-900 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-semibold text-[#2B333C] leading-tight">
             Aftercare that{' '}
-            <span className="bg-linear-to-r from-amber-600/70 to-amber-400/60 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-[#9E4A47]/90 to-[#B87C72]/80 bg-clip-text text-transparent">
               Protects Your Glow
             </span>
           </h2>
-          <p className="mt-4 text-neutral-600 text-lg max-w-md">
+          <p className="mt-4 text-[#828D9C] text-lg max-w-md">
             Simple care keeps collagen building and skin calm.
           </p>
 
@@ -71,10 +71,10 @@ export default function AftercareSection() {
                 className="flex items-start gap-3"
               >
                 <CheckCircle
-                  className="text-amber-600 mt-1 shrink-0"
+                  className="text-[#9E4A47] mt-1 shrink-0"
                   size={20}
                 />
-                <p className="text-neutral-700 text-base leading-relaxed">
+                <p className="text-[#2B333C] text-base leading-relaxed">
                   {item}
                 </p>
               </motion.div>
@@ -83,7 +83,7 @@ export default function AftercareSection() {
 
           <motion.div
             whileHover={{ scale: 1.03 }}
-            className="inline-block mt-10 px-6 py-3 rounded-full border border-amber-200 bg-amber-50/40 text-amber-700 font-medium shadow-sm hover:shadow-md transition-all"
+            className="inline-block mt-10 px-6 py-3 rounded-full border border-[#DFDFDD] bg-[#FCEBDE] text-[#9E4A47] font-medium shadow-sm hover:shadow-md transition-all"
           >
             Post-HIFU skincare essentials
           </motion.div>

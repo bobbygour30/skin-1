@@ -1,14 +1,15 @@
-/*
-HIFUStepByStep.jsx (Updated)
-- Removed “Step x of 4”, “Details” button, and small index number.
-- Refined internal padding and alignment for cleaner visual hierarchy.
-*/
+import React from "react";
+import { motion } from "framer-motion";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-
-const GOLD = 'bg-gradient-to-r from-[#FBF7EF] to-[#FBF1DD]';
-const ACCENT = 'ring-1 ring-[#c9ac6a]/20';
+const COLORS = {
+  primary: "#9E4A47",
+  lightBg: "#FFF8EF",
+  softBg: "#FCEBDE",
+  mid: "#B87C72",
+  dark: "#2B333C",
+  gray: "#828D9C",
+  neutral: "#DFDFDD",
+};
 
 const container = {
   hidden: {},
@@ -17,131 +18,226 @@ const container = {
 
 const cardVariant = {
   hidden: { opacity: 0, y: 18, scale: 0.98 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
 };
 
 export default function HIFUStepByStep() {
   const steps = [
     {
-      id: '01',
-      title: 'Consult & Assessment',
-      desc: 'Facial laxity grading, photos, and vector planning. Contraindication check.',
+      id: "01",
+      title: "Consult & Assessment",
+      desc: "Facial laxity grading, photos, and vector planning. Contraindication check.",
     },
     {
-      id: '02',
-      title: 'Mapping & Nerve‑Safe Marking',
-      desc: 'Depth cartridges selected per zone; energy, lines and shots planned.',
+      id: "02",
+      title: "Mapping & Nerve-Safe Marking",
+      desc: "Depth cartridges selected per zone; energy, lines and shots planned.",
     },
     {
-      id: '03',
-      title: 'HIFU Delivery',
-      desc: 'Ultrasound passes along vectors; comfort managed; immediate tightening feel.',
+      id: "03",
+      title: "HIFU Delivery",
+      desc: "Ultrasound passes along vectors; comfort managed; immediate tightening feel.",
     },
     {
-      id: '04',
-      title: 'Aftercare & Follow‑up',
-      desc: 'SPF, gentle skincare, optional adjunct boosters; review at 8–12 weeks.',
+      id: "04",
+      title: "Aftercare & Follow-up",
+      desc: "SPF, gentle skincare, optional adjunct boosters; review at 8–12 weeks.",
     },
   ];
 
   return (
-    <section className="py-10 px-6 sm:px-10 lg:px-20 bg-linear-to-b from-white via-[#FFFBF7] to-white">
-      <div className="max-w-6xl mx-auto">
-        <header className="mb-8 text-center">
+    <section
+      className="relative py-20 px-6 sm:px-10 lg:px-20 overflow-hidden"
+      style={{ backgroundColor: COLORS.lightBg }}
+    >
+      <div className=" relative">
+        {/* Header */}
+        <header className="mb-12 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl font-extrabold text-gray-900"
+            className="text-3xl sm:text-4xl font-extrabold"
+            style={{ color: COLORS.dark }}
           >
-            <span>Precision Meets Science — </span>
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#6b5e43] to-[#c9ac6a]">Step by Step</span>
+            Precision Meets Science —{" "}
+            <span
+              className="text-transparent bg-clip-text bg-linear-to-r"
+              style={{
+                backgroundImage: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.mid})`,
+              }}
+            >
+              Step by Step
+            </span>
           </motion.h2>
 
-          <motion.div
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25, duration: 0.6 }}
-            className="mt-3 text-gray-600 max-w-2xl mx-auto"
+            className="mt-3 text-base"
+            style={{ color: COLORS.gray }}
           >
-            <p>Guided protocol with clinical precision — each step is deliberate, safe and personalised to you.</p>
-          </motion.div>
+            Guided protocol with clinical precision — each step is deliberate,
+            safe and personalised to you.
+          </motion.p>
         </header>
 
+        {/* THREAD TEXTS */}
+        <div className="relative mb-10 w-full">
+          {/* "You are here" - Left side */}
+          <div
+            className="absolute top-28 -left-7 z-0 flex items-center gap-2 text-lg italic font-semibold"
+            style={{ color: COLORS.mid }}
+          >
+            You are here 
+          </div>
+
+          {/* "Result" - Right side */}
+          <div
+            className="absolute top-28 right-6 z-0 flex items-center gap-2 text-lg italic font-semibold"
+            style={{ color: COLORS.mid }}
+          >
+             Result
+          </div>
+
+          {/* ⚡ Continuous Animated Thread */}
+<motion.svg
+  className="absolute top-32 left-0 w-full h-28 -translate-y-1/2 z-0"
+  viewBox="0 0 1200 200"
+  preserveAspectRatio="none"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+>
+  <defs>
+    {/* ✨ Gradient for thread color */}
+    <linearGradient id="threadGradient" x1="0%" x2="100%">
+      <stop offset="0%" stopColor="#9E4A47" stopOpacity="0.9" />
+      <stop offset="50%" stopColor="#B87C72" stopOpacity="0.8" />
+      <stop offset="100%" stopColor="#DFDFDD" stopOpacity="0.7" />
+    </linearGradient>
+
+    {/* Animate shimmer effect */}
+    <linearGradient id="animatedGradient" x1="0" x2="100%">
+      <stop offset="0%" stopColor="#FFF8EF">
+        <animate
+          attributeName="offset"
+          values="-1; 1"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </stop>
+      <stop offset="50%" stopColor="#FCEBDE" />
+      <stop offset="100%" stopColor="#9E4A47" />
+    </linearGradient>
+  </defs>
+
+  {/* 🌈 Base Thread Path */}
+  <path
+    d="M50 100 C300 40, 600 160, 900 80 C1050 40, 1150 100, 1150 100"
+    fill="none"
+    stroke="url(#threadGradient)"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    opacity="0.5"
+  />
+
+  {/* ✨ Animated Shimmer Overlay */}
+  <motion.path
+    d="M50 100 C300 40, 600 160, 900 80 C1050 40, 1150 100, 1150 100"
+    fill="none"
+    stroke="url(#animatedGradient)"
+    strokeWidth="4"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeDasharray="15 20"
+    animate={{ strokeDashoffset: [0, -100] }}
+    transition={{
+      duration: 3,
+      ease: "linear",
+      repeat: Infinity,
+    }}
+    style={{
+      filter: "drop-shadow(0 0 6px rgba(158,74,71,0.5))",
+    }}
+  />
+
+</motion.svg>
+
+        </div>
+
+        {/* STEP CARDS */}
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="relative"
+          className="relative grid lg:grid-cols-4 gap-6 z-10 max-w-7xl mx-auto"
         >
-          <div className="hidden lg:block absolute inset-x-0 top-1/2 -translate-y-1/2 pointer-events-none">
-            <svg className="w-full h-24" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden>
-              <defs>
-                <linearGradient id="gshimmer" x1="0%" x2="100%">
-                  <stop offset="0%" stopColor="#fff9f2" stopOpacity="0" />
-                  <stop offset="40%" stopColor="#f7efe0" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#fff9f2" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-              <path d="M0 60 C 250 0, 450 120, 600 60 C 750 0, 950 120, 1200 60" fill="none" stroke="url(#gshimmer)" strokeWidth="4" strokeLinecap="round" />
-              <g>
-                {[150, 420, 780, 1060].map((cx, i) => (
-                  <circle key={i} cx={cx} cy="60" r="6" fill="#c9ac6a" opacity="0.9" />
-                ))}
-              </g>
-            </svg>
-          </div>
-
-          <div className="grid lg:grid-cols-4 gap-6 relative z-10">
-            {steps.map((s) => (
-              <motion.article
-                key={s.id}
-                variants={cardVariant}
-                className={`relative overflow-hidden rounded-2xl ${GOLD} ${ACCENT} border border-transparent hover:border-[#c9ac6a]/30 transition-transform hover:scale-[1.02]`}
-                whileHover={{ boxShadow: '0 18px 50px rgba(201,172,106,0.12)' }}
-              >
-                <div className="pointer-events-none absolute inset-0 flex items-start justify-center">
-                  <span className="text-[96px] font-extrabold text-[#c9ac6a] select-none" style={{ opacity: 0.08 }}>
-                    {s.id}
-                  </span>
-                </div>
-
-                <div className="p-8 relative flex flex-col justify-center h-full">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-white/90 shadow">
-                      <div className="w-10 h-10 rounded-md flex items-center justify-center bg-linear-to-br from-[#f9f4ea] to-[#f6e9d2] border border-[#e6d9b8]">
-                        <span className="text-sm font-semibold text-[#6b5e43]">{s.id}</span>
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900 leading-snug">{s.title}</h3>
-                      <p className="mt-3 text-sm text-gray-600 leading-relaxed">{s.desc}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute -right-8 -top-8 w-28 h-28 rounded-full opacity-30 bg-linear-to-br from-[#fff6e6] to-[#fff1d8] blur-3xl pointer-events-none" />
-              </motion.article>
-            ))}
-          </div>
-
-          <div className="lg:hidden mt-6">
-            <div className="relative pl-8">
-              <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-linear-to-b from-[#f5eddc] to-white" aria-hidden />
-              <div className="flex flex-col gap-8">
-                {steps.map((s) => (
-                  <div key={s.id} className="flex items-start gap-4">
-                    <div className="w-6 h-6 rounded-full bg-[#c9ac6a] flex items-center justify-center text-white text-xs font-semibold mt-1">{s.id}</div>
-                    <div>
-                      <div className="font-semibold text-gray-900">{s.title}</div>
-                      <div className="text-sm text-gray-600 mt-1">{s.desc}</div>
-                    </div>
-                  </div>
-                ))}
+          {steps.map((s) => (
+            <motion.article
+              key={s.id}
+              variants={cardVariant}
+              className="relative rounded-2xl overflow-hidden transition-transform hover:scale-[1.02] shadow-md"
+              style={{
+                background: `linear-gradient(135deg, ${COLORS.softBg}, ${COLORS.lightBg})`,
+                border: `1px solid ${COLORS.neutral}`,
+              }}
+              whileHover={{
+                boxShadow: `0 18px 50px rgba(158,74,71,0.15)`,
+              }}
+            >
+              <div className="pointer-events-none absolute inset-0 flex items-start justify-center">
+                <span
+                  className="text-[96px] font-extrabold select-none"
+                  style={{ color: COLORS.mid, opacity: 0.08 }}
+                >
+                  {s.id}
+                </span>
               </div>
-            </div>
-          </div>
+
+              <div className="p-8 relative flex flex-col justify-center h-full">
+                <div className="flex items-start gap-4">
+                  <div
+                    className="w-14 h-14 rounded-xl flex items-center justify-center shadow"
+                    style={{ backgroundColor: "#fff" }}
+                  >
+                    <div
+                      className="w-10 h-10 rounded-md flex items-center justify-center font-semibold"
+                      style={{
+                        background: `linear-gradient(135deg, ${COLORS.neutral}, ${COLORS.softBg})`,
+                        border: `1px solid ${COLORS.gray}40`,
+                        color: COLORS.primary,
+                      }}
+                    >
+                      {s.id}
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3
+                      className="text-lg font-semibold leading-snug"
+                      style={{ color: COLORS.dark }}
+                    >
+                      {s.title}
+                    </h3>
+                    <p
+                      className="mt-3 text-sm leading-relaxed"
+                      style={{ color: COLORS.gray }}
+                    >
+                      {s.desc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          ))}
         </motion.div>
       </div>
     </section>

@@ -13,11 +13,13 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.com/free-photo/view-from-rejuvenation-beautiful-woman-enjoying-cosmetology-procedures-beauty-salon-dermatology-hands-blue-glows-healthcare-therapy-botox_197531-2783.jpg' }) {
+export default function HIFUFeatureComponent({
+  imageSrc = 'https://img.freepik.com/free-photo/view-from-rejuvenation-beautiful-woman-enjoying-cosmetology-procedures-beauty-salon-dermatology-hands-blue-glows-healthcare-therapy-botox_197531-2783.jpg',
+}) {
   return (
-    <section className="bg-linear-to-br from-white via-amber-50/40 to-white text-gray-900 py-10 px-6 sm:px-8 lg:px-16 relative overflow-hidden">
-      {/* Soft gold glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.15),transparent_70%)] -z-10"></div>
+    <section className="bg-linear-to-br from-[#FFF8EF] via-[#FCEBDE]/60 to-[#FFF8EF] text-[#2B333C] py-10 px-6 sm:px-8 lg:px-16 relative overflow-hidden">
+      {/* Soft blush glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(184,124,114,0.12),transparent_70%)] -z-10"></div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* LEFT SECTION */}
@@ -34,14 +36,14 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
             className="text-3xl sm:text-4xl font-extrabold tracking-tight"
           >
             Why Choose{' '}
-            <span className="bg-linear-to-r from-amber-600 via-yellow-500 to-amber-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-[#9E4A47] via-[#B87C72] to-[#FCEBDE] bg-clip-text text-transparent">
               HIFU
             </span>{' '}
             at Satya
           </motion.h2>
 
           {/* Intro */}
-          <motion.p variants={fadeUp} className="text-gray-700 max-w-xl leading-relaxed">
+          <motion.p variants={fadeUp} className="text-[#2B333C]/80 max-w-xl leading-relaxed">
             High-Intensity Focused Ultrasound precisely targets the SMAS and deep dermis to
             trigger collagen remodeling — achieving natural, lifted contours without surgery,
             needles, or downtime.
@@ -58,7 +60,7 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
               <motion.div
                 key={t}
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-3 bg-white rounded-full border border-amber-100 shadow-[0_2px_8px_rgba(212,175,55,0.12)] px-5 py-2 text-sm font-medium transition-all"
+                className="flex items-center gap-3 bg-[#FFF8EF] rounded-full border border-[#DFDFDD] shadow-[0_2px_8px_rgba(184,124,114,0.12)] px-5 py-2 text-sm font-medium transition-all"
                 transition={{
                   type: 'spring',
                   stiffness: 280,
@@ -66,8 +68,8 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
                   delay: i * 0.05,
                 }}
               >
-                <span className="w-2 h-2 rounded-full bg-amber-500 inline-block" aria-hidden />
-                <span className="text-gray-800">{t}</span>
+                <span className="w-2 h-2 rounded-full bg-[#9E4A47] inline-block" aria-hidden />
+                <span className="text-[#2B333C]">{t}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -90,7 +92,7 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
           <motion.div variants={fadeUp} className="flex gap-4 items-center">
             <a
               href="#book"
-              className="inline-flex items-center gap-3 bg-linear-to-r from-amber-600 to-yellow-500 text-white px-6 py-3 rounded-lg shadow-lg hover:scale-[1.03] transition-transform focus:outline-none focus:ring-2 focus:ring-amber-400"
+              className="inline-flex items-center gap-3 bg-linear-to-r from-[#9E4A47] to-[#B87C72] text-white px-6 py-3 rounded-lg shadow-lg hover:scale-[1.03] transition-transform focus:outline-none focus:ring-2 focus:ring-[#B87C72]/40"
             >
               Book a Consultation
               <svg
@@ -109,7 +111,7 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
               </svg>
             </a>
 
-            <a href="#learn" className="text-amber-700 underline text-sm font-medium">
+            <a href="#learn" className="text-[#9E4A47] underline text-sm font-medium">
               Learn more
             </a>
           </motion.div>
@@ -123,7 +125,7 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
           viewport={{ once: true, amount: 0.3 }}
           className="relative"
         >
-          <div className="rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(212,175,55,0.2)] bg-linear-to-br from-white via-amber-50 to-white">
+          <div className="rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(158,74,71,0.2)] bg-linear-to-br from-[#FFF8EF] via-[#FCEBDE] to-[#FFF8EF]">
             <motion.img
               src={imageSrc}
               alt="HIFU treatment preview"
@@ -137,29 +139,21 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
               initial={{ y: 12, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ type: 'spring', stiffness: 90, delay: 0.15 }}
-              className="absolute left-6 top-6 bg-white/90 backdrop-blur-sm rounded-xl px-3 py-1.5 shadow-md border border-amber-100 flex items-center gap-2"
+              className="absolute left-6 top-6 bg-white/90 backdrop-blur-sm rounded-xl px-3 py-1.5 shadow-md border border-[#DFDFDD] flex items-center gap-2"
             >
-              <svg
-                className="w-5 h-5 text-amber-700"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden
-              >
+              <svg className="w-5 h-5 text-[#9E4A47]" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.4" />
               </svg>
               <div className="text-xs">
-                <div className="font-semibold text-amber-800">Clinically Proven</div>
-                <div className="text-gray-600 text-[11px]">Safe for Indian skin</div>
+                <div className="font-semibold text-[#9E4A47]">Clinically Proven</div>
+                <div className="text-[#828D9C] text-[11px]">Safe for Indian skin</div>
               </div>
             </motion.div>
-
-            {/* Animated ultrasound waves */}
-            <WaveAnimation className="absolute right-4 bottom-4" />
           </div>
         </motion.div>
       </div>
 
-      {/* Secondary Section */}
+      {/* SECONDARY SECTION */}
       <div className="max-w-5xl mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Left: What is HIFU */}
         <motion.div
@@ -169,13 +163,12 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
           variants={container}
           className="space-y-4"
         >
-          <motion.h3 variants={fadeUp} className="text-2xl font-semibold text-amber-700">
+          <motion.h3 variants={fadeUp} className="text-2xl font-semibold text-[#9E4A47]">
             What is HIFU Facial?
           </motion.h3>
-          <motion.p variants={fadeUp} className="text-gray-700 leading-relaxed">
+          <motion.p variants={fadeUp} className="text-[#2B333C]/80 leading-relaxed">
             A non-surgical tightening procedure using focused ultrasound to heat specific
-            skin layers — triggering collagen renewal and natural lift. Ideal for mild
-            laxity, double chin, jawline definition, and neck tightening.
+            skin layers — triggering collagen renewal and natural lift.
           </motion.p>
 
           <motion.ul variants={fadeUp} className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -187,10 +180,9 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
             ].map((x) => (
               <li key={x} className="flex items-start gap-3">
                 <svg
-                  className="w-5 h-5 mt-1 text-amber-600"
+                  className="w-5 h-5 mt-1 text-[#9E4A47]"
                   viewBox="0 0 24 24"
                   fill="none"
-                  aria-hidden
                 >
                   <path
                     d="M5 13l4 4L19 7"
@@ -200,7 +192,7 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span className="text-gray-800">{x}</span>
+                <span className="text-[#2B333C]">{x}</span>
               </li>
             ))}
           </motion.ul>
@@ -212,50 +204,20 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
           variants={container}
-          className="space-y-4 bg-white rounded-2xl p-6 shadow-[0_4px_30px_rgba(212,175,55,0.1)] border border-amber-100"
+          className="space-y-4 bg-[#FFF8EF] rounded-2xl p-6 shadow-[0_4px_30px_rgba(158,74,71,0.1)] border border-[#DFDFDD]"
         >
-          <motion.h4 variants={fadeUp} className="text-xl font-semibold text-amber-700">
+          <motion.h4 variants={fadeUp} className="text-xl font-semibold text-[#9E4A47]">
             Who Should Avoid?
           </motion.h4>
-          <motion.p variants={fadeUp} className="text-gray-700 leading-relaxed">
-            Avoid HIFU if you have active acne, infection, or open wounds in the area. Also
-            avoid during pregnancy or if you have implanted metal/electronic devices near
-            the treatment site.
+          <motion.p variants={fadeUp} className="text-[#2B333C]/80 leading-relaxed">
+            Avoid HIFU if you have active acne, infection, or open wounds. Also
+            avoid during pregnancy or with nearby metal implants.
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-4 grid grid-cols-1 gap-3">
             <WarningRow text="Active acne or open wounds" />
             <WarningRow text="Metal implants or pacemaker nearby" />
             <WarningRow text="Pregnancy (precaution)" />
-          </motion.div>
-
-          <motion.div variants={fadeUp} className="mt-6">
-            <div className="rounded-lg border border-dashed border-amber-200 p-4">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center shadow-sm">
-                  <svg
-                    className="w-6 h-6 text-amber-700"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M12 3v6"
-                      stroke="currentColor"
-                      strokeWidth="1.4"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-800">
-                    Free 15-minute assessment
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    Meet our dermatologists to determine your ideal plan.
-                  </div>
-                </div>
-              </div>
-            </div>
           </motion.div>
         </motion.div>
       </div>
@@ -266,11 +228,11 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-linear-to-r from-amber-600 to-yellow-500 text-white rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg"
+          className="bg-linear-to-r from-[#9E4A47] to-[#B87C72] text-white rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg"
         >
           <div>
             <div className="text-lg font-semibold">Ready for a natural lift?</div>
-            <div className="text-sm text-amber-100">
+            <div className="text-sm text-[#FCEBDE]">
               Book a consultation today and begin your transformation.
             </div>
           </div>
@@ -278,7 +240,7 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
           <div className="flex gap-3">
             <a
               href="#book"
-              className="inline-flex items-center gap-3 bg-white text-amber-700 px-5 py-3 rounded-lg shadow font-medium hover:scale-105 transition"
+              className="inline-flex items-center gap-3 bg-white text-[#9E4A47] px-5 py-3 rounded-lg shadow font-medium hover:scale-105 transition"
             >
               Book Now
             </a>
@@ -298,14 +260,10 @@ export default function HIFUFeatureComponent({ imageSrc = 'https://img.freepik.c
 /* --- Sub Components --- */
 function DetailCard({ title, subtitle, icon }) {
   return (
-    <div className="bg-white rounded-xl p-4 shadow-sm border border-amber-100 flex gap-4 items-start hover:shadow-[0_4px_20px_rgba(212,175,55,0.1)] transition">
-      <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center text-amber-700">
+    <div className="bg-[#FFF8EF] rounded-xl p-4 shadow-sm border border-[#DFDFDD] flex gap-4 items-start hover:shadow-[0_4px_20px_rgba(158,74,71,0.1)] transition">
+      <div className="w-12 h-12 rounded-lg bg-[#FCEBDE] flex items-center justify-center text-[#9E4A47]">
         {icon === 'pulse' ? (
-          <svg
-            className="w-6 h-6"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
+          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
             <path
               d="M3 12h3l2 6 4-18 2 12 1-4h3"
               stroke="currentColor"
@@ -315,24 +273,14 @@ function DetailCard({ title, subtitle, icon }) {
             />
           </svg>
         ) : (
-          <svg
-            className="w-6 h-6"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="4"
-              stroke="currentColor"
-              strokeWidth="1.4"
-            />
+          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.4" />
           </svg>
         )}
       </div>
       <div>
-        <div className="font-semibold text-gray-800">{title}</div>
-        <div className="text-sm text-gray-600">{subtitle}</div>
+        <div className="font-semibold text-[#2B333C]">{title}</div>
+        <div className="text-sm text-[#828D9C]">{subtitle}</div>
       </div>
     </div>
   );
@@ -341,57 +289,8 @@ function DetailCard({ title, subtitle, icon }) {
 function WarningRow({ text }) {
   return (
     <div className="flex items-start gap-3">
-      <div className="w-3 h-3 rounded-full bg-amber-400 mt-1" />
-      <div className="text-gray-800">{text}</div>
+      <div className="w-3 h-3 rounded-full bg-[#9E4A47] mt-1" />
+      <div className="text-[#2B333C]">{text}</div>
     </div>
-  );
-}
-
-function WaveAnimation({ className = '' }) {
-  return (
-    <motion.div
-      className={`flex items-center justify-center p-2 rounded-full bg-white/80 ${className}`}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.7 }}
-    >
-      <svg width="84" height="48" viewBox="0 0 84 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="goldWave" x1="0" x2="1">
-            <stop offset="0%" stopColor="#d4af37" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#f6d365" stopOpacity="0.6" />
-          </linearGradient>
-        </defs>
-        <motion.g
-          initial={{ scale: 0.9 }}
-          animate={{ scale: [0.95, 1.02, 0.98] }}
-          transition={{ repeat: Infinity, duration: 3 }}
-        >
-          <motion.path
-            d="M6 36 C 18 8, 30 8, 42 36"
-            stroke="url(#goldWave)"
-            strokeWidth="2.2"
-            strokeLinecap="round"
-            fill="transparent"
-          />
-          <motion.path
-            d="M18 36 C 30 10, 42 10, 54 36"
-            stroke="url(#goldWave)"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            fill="transparent"
-            opacity="0.8"
-          />
-          <motion.path
-            d="M30 36 C 42 12, 54 12, 66 36"
-            stroke="url(#goldWave)"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-            fill="transparent"
-            opacity="0.6"
-          />
-        </motion.g>
-      </svg>
-    </motion.div>
   );
 }
