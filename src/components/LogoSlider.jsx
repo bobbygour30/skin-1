@@ -22,7 +22,7 @@ export default function LogoSlider() {
   // Smooth infinite motion using animation frame
   useAnimationFrame((t, delta) => {
     if (!isPaused && containerRef.current) {
-      xRef.current -= (delta / 50); // Speed control
+      xRef.current -= delta / 50; // Speed control
       const totalWidth = containerRef.current.scrollWidth / 2;
       if (Math.abs(xRef.current) >= totalWidth) xRef.current = 0;
       containerRef.current.style.transform = `translateX(${xRef.current}px)`;
@@ -30,20 +30,20 @@ export default function LogoSlider() {
   });
 
   return (
-    <div className="bg-linear-to-br from-white via-[#84332F]/20 to-white py-20 px-6 sm:px-8 lg:px-12">
+    <div className="bg-gradient-to-br from-[#FFF8EF] via-[#FCEBDE]/40 to-[#FFF8EF] py-20 px-6 sm:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
         <div
           className="relative"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Glow */}
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.12),transparent_70%)] blur-3xl"></div>
+          {/* Soft Rose Glow */}
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(158,74,71,0.12),transparent_70%)] blur-3xl"></div>
 
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-[0_0_40px_rgba(212,175,55,0.15)] p-10 border border-amber-100">
+          <div className="bg-[#FFF8EF]/80 backdrop-blur-xl rounded-3xl shadow-[0_0_40px_rgba(158,74,71,0.12)] p-10 border border-[#DFDFDD]">
             {/* Title */}
             <h3 className="text-xl sm:text-2xl font-semibold text-center mb-10 relative">
-              <span className="bg-linear-to-r from-[#9E4A47] to-[#84332F] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#9E4A47] to-[#B87C72] bg-clip-text text-transparent">
                 Certified Excellence
               </span>
               <span className="absolute left-1/2 -bottom-2 w-16 h-0.5 bg-[#9E4A47] -translate-x-1/2 rounded-full"></span>
@@ -59,15 +59,15 @@ export default function LogoSlider() {
                     style={{ minWidth: '140px' }}
                   >
                     <div className="group relative">
-                      <div className="bg-white rounded-2xl p-4 transition-all duration-500 transform group-hover:scale-105 group-hover:rotate-1 group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] border border-amber-100">
-                        <div className="bg-gray-50 rounded-xl w-24 h-20 sm:w-28 sm:h-24 flex items-center justify-center overflow-hidden">
+                      <div className="bg-[#FFF8EF] rounded-2xl p-4 transition-all duration-500 transform group-hover:scale-105 group-hover:rotate-1 group-hover:shadow-[0_0_25px_rgba(158,74,71,0.25)] border border-[#DFDFDD]">
+                        <div className="bg-[#FCEBDE] rounded-xl w-24 h-20 sm:w-28 sm:h-24 flex items-center justify-center overflow-hidden">
                           <img
                             src={cert.logo}
                             alt={cert.name}
                             className="w-full h-full object-contain p-2 filter grayscale group-hover:grayscale-0 transition-all duration-300"
                           />
                         </div>
-                        <p className="text-center text-xs font-semibold text-gray-700 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p className="text-center text-xs font-semibold text-[#2B333C] mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           {cert.name}
                         </p>
                       </div>
@@ -80,7 +80,7 @@ export default function LogoSlider() {
             {/* Indicator */}
             <div className="flex justify-center mt-6 space-x-1">
               <div className="w-2 h-2 bg-[#9E4A47] rounded-full animate-pulse"></div>
-              <div className="w-2 h-2 bg-[#9E4A47] rounded-full animate-pulse delay-75"></div>
+              <div className="w-2 h-2 bg-[#B87C72] rounded-full animate-pulse delay-75"></div>
               <div className="w-2 h-2 bg-[#9E4A47] rounded-full animate-pulse delay-150"></div>
             </div>
           </div>
