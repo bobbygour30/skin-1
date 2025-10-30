@@ -60,9 +60,9 @@ export default function HifuFAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="relative bg-white py-10 px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section className="relative bg-[#FFF8EF] py-14 px-6 md:px-16 lg:px-24 overflow-hidden">
       {/* Soft background glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(245,231,209,0.3),transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(252,235,222,0.5),transparent_70%)] pointer-events-none" />
 
       {/* Header */}
       <motion.div
@@ -72,13 +72,13 @@ export default function HifuFAQSection() {
         viewport={{ once: true }}
         className="relative z-10 text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-semibold bg-linear-to-r from-neutral-800 via-amber-600/70 to-neutral-900 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-semibold bg-linear-to-r from-[#2B333C] via-[#9E4A47] to-[#B87C72] bg-clip-text text-transparent">
           Everything You Should Know
         </h2>
       </motion.div>
 
       {/* FAQ Accordion */}
-      <div className="max-w-3xl mx-auto divide-y divide-amber-100 border-y border-amber-200/60 relative z-10">
+      <div className="max-w-3xl mx-auto divide-y divide-[#DFDFDD] border-y border-[#DFDFDD]/70 relative z-10">
         {faqs.map((faq, idx) => (
           <motion.div
             key={idx}
@@ -90,17 +90,15 @@ export default function HifuFAQSection() {
           >
             <button
               className="flex justify-between items-center w-full text-left group"
-              onClick={() =>
-                setOpenIndex(openIndex === idx ? null : idx)
-              }
+              onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
             >
-              <span className="text-lg md:text-xl font-medium text-neutral-900 group-hover:text-amber-700 transition-colors">
+              <span className="text-lg md:text-xl font-medium text-[#2B333C] group-hover:text-[#9E4A47] transition-colors">
                 {faq.question}
               </span>
               <motion.div
                 animate={{ rotate: openIndex === idx ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
-                className="ml-3 text-amber-700"
+                className="ml-3 text-[#9E4A47]"
               >
                 <ChevronDown size={22} />
               </motion.div>
@@ -116,7 +114,7 @@ export default function HifuFAQSection() {
                   transition={{ duration: 0.4, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <p className="mt-3 text-neutral-700 text-base leading-relaxed bg-amber-50/40 rounded-lg p-4 border border-amber-100 shadow-sm">
+                  <p className="mt-3 text-[#828D9C] text-base leading-relaxed bg-[#FCEBDE]/50 rounded-lg p-4 border border-[#DFDFDD] shadow-sm">
                     {faq.answer}
                   </p>
                 </motion.div>
@@ -132,18 +130,18 @@ export default function HifuFAQSection() {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true }}
-        className="relative z-10 mt-20 max-w-2xl mx-auto bg-linear-to-r from-amber-50 to-white border border-amber-200/60 rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.05)] p-8 text-center"
+        className="relative z-10 mt-20 max-w-2xl mx-auto bg-linear-to-r from-[#FCEBDE] to-[#FFF8EF] border border-[#DFDFDD] rounded-2xl shadow-[0_8px_24px_rgba(158,74,71,0.1)] p-8 text-center"
       >
-        <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+        <h3 className="text-xl font-semibold text-[#2B333C] mb-2">
           Still have questions?
         </h3>
-        <p className="text-neutral-600 mb-6">
+        <p className="text-[#828D9C] mb-6">
           Chat directly with our dermatologist for guidance tailored to your skin.
         </p>
         <motion.a
           href="#"
           whileHover={{ scale: 1.05 }}
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-amber-700 text-white font-medium shadow-md hover:bg-amber-800 transition-all"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#9E4A47] text-white font-medium shadow-md hover:bg-[#B87C72] transition-all"
         >
           <MessageCircle size={20} />
           Chat with a Doctor
