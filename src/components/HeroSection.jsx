@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex flex-col sm:flex-row items-start sm:items-center justify-start w-full min-h-[90vh] sm:min-h-screen overflow-hidden">
+    <section className="relative flex flex-col sm:flex-row items-start sm:items-center justify-start w-full min-h-[90vh] sm:min-h-screen overflow-hidden mt-[100px]">
       {/* === Desktop Background === */}
       <div
         className="absolute inset-0 bg-cover bg-center hidden sm:block"
@@ -31,7 +31,7 @@ const HeroSection = () => {
 
       {/* === Content === */}
       <motion.div
-        className="relative z-10 flex flex-col items-center sm:items-start text-center sm:text-left w-full sm:max-w-xl px-6 sm:px-16 md:px-24 pt-12 sm:pt-0 text-[#FFF8EF] mt-10"
+        className="relative z-10 flex flex-col items-center sm:items-start text-center sm:text-left w-full sm:max-w-[1000px] px-6 sm:px-16 md:px-24 pt-12 sm:pt-0 text-[#FFF8EF] mt-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -43,7 +43,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.3 }}
         >
-          Real Confidence.<br className="hidden sm:block" /> Real Results.
+         When Healthy Skin Feels Like Confidence
         </motion.h1>
 
         {/* Subtext */}
@@ -53,8 +53,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.6 }}
         >
-          Advanced HIFU facial contouring by Satya — non-invasive lift for
-          jawline, cheeks, and neck. Safe, precise, and natural.
+          Satya's dermatologist-performed HIFU tones, contours, and rejuvenates from deep within for results that build for months.
         </motion.p>
 
         {/* CTA Button */}

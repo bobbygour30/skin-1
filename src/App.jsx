@@ -32,10 +32,10 @@ const App = () => {
       <RealPeopleRealLift />
       <AftercareSection />
       <DermatologistSection />
-      <HifuFAQSection />
+      <SatyaFacilitySection />
       <HifuConsultationForm />
       <HifuMediaShowcase />
-      <SatyaFacilitySection />
+      <HifuFAQSection />
       <Footer />
     </div>
   )

@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
+import assets from '../assets/assets';
 
 export default function SatyaFacilitySection() {
   return (
@@ -76,7 +77,7 @@ export default function SatyaFacilitySection() {
         >
           <div className="rounded-3xl overflow-hidden border border-[#DFDFDD] shadow-[0_8px_30px_rgba(0,0,0,0.08)] group">
             <img
-              src="https://www.architectandinteriorsindia.com/cloud/2023/09/14/Mk5zKsiU-Copy-of-Copy-of-E_MKGs_HR-42-1200x800.jpg"
+              src={assets.place}
               alt="Satya facility interior"
               className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
             />

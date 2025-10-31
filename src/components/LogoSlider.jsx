@@ -30,7 +30,7 @@ export default function LogoSlider() {
   });
 
   return (
-    <div className="bg-gradient-to-br from-[#FFF8EF] via-[#FCEBDE]/40 to-[#FFF8EF] py-20 px-6 sm:px-8 lg:px-12">
+    <div className="bg-linear-to-br from-[#FFF8EF] via-[#FCEBDE]/40 to-[#FFF8EF] py-20 px-6 sm:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
         <div
           className="relative"
@@ -43,7 +43,7 @@ export default function LogoSlider() {
           <div className="bg-[#FFF8EF]/80 backdrop-blur-xl rounded-3xl shadow-[0_0_40px_rgba(158,74,71,0.12)] p-10 border border-[#DFDFDD]">
             {/* Title */}
             <h3 className="text-xl sm:text-2xl font-semibold text-center mb-10 relative">
-              <span className="bg-gradient-to-r from-[#9E4A47] to-[#B87C72] bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-[#9E4A47] to-[#B87C72] bg-clip-text text-transparent">
                 Certified Excellence
               </span>
               <span className="absolute left-1/2 -bottom-2 w-16 h-0.5 bg-[#9E4A47] -translate-x-1/2 rounded-full"></span>

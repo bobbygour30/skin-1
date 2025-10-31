@@ -154,7 +154,7 @@ export default function HIFUFeatureComponent({
       </div>
 
       {/* SECONDARY SECTION */}
-      <div className="max-w-5xl mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="max-w-5xl mx-auto mt-10">
         {/* Left: What is HIFU */}
         <motion.div
           initial="hidden"
@@ -196,29 +196,6 @@ export default function HIFUFeatureComponent({
               </li>
             ))}
           </motion.ul>
-        </motion.div>
-
-        {/* Right: Who should avoid */}
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={container}
-          className="space-y-4 bg-[#FFF8EF] rounded-2xl p-6 shadow-[0_4px_30px_rgba(158,74,71,0.1)] border border-[#DFDFDD]"
-        >
-          <motion.h4 variants={fadeUp} className="text-xl font-semibold text-[#9E4A47]">
-            Who Should Avoid?
-          </motion.h4>
-          <motion.p variants={fadeUp} className="text-[#2B333C]/80 leading-relaxed">
-            Avoid HIFU if you have active acne, infection, or open wounds. Also
-            avoid during pregnancy or with nearby metal implants.
-          </motion.p>
-
-          <motion.div variants={fadeUp} className="mt-4 grid grid-cols-1 gap-3">
-            <WarningRow text="Active acne or open wounds" />
-            <WarningRow text="Metal implants or pacemaker nearby" />
-            <WarningRow text="Pregnancy (precaution)" />
-          </motion.div>
         </motion.div>
       </div>
 
