@@ -29,7 +29,7 @@ export default function ScienceBehindHIFU({
             className="text-3xl sm:text-4xl font-extrabold tracking-tight"
           >
             The Science Behind{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#9E4A47] via-[#B87C72] to-[#DFDFDD]">
+            <span className="text-transparent bg-clip-text bg-[#9E4A47]">
               HIFU
             </span>
           </motion.h2>

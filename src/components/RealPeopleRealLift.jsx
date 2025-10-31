@@ -39,8 +39,6 @@ export default function RealPeopleRealLift() {
 
   return (
     <section className="relative bg-[#FFF8EF] py-10 px-6 md:px-16 lg:px-24 text-[#2B333C] mt-10 overflow-hidden">
-      {/* Background Accent */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_30%,rgba(252,235,222,0.35),transparent_70%)] pointer-events-none" />
 
       {/* Header */}
       <motion.div

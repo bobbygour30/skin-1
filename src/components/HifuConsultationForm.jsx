@@ -40,7 +40,7 @@ export default function HifuConsultationForm() {
         viewport={{ once: true }}
         className="relative z-10 text-center mb-12"
       >
-        <h2 className="text-4xl md:text-5xl font-semibold bg-linear-to-r from-[#9E4A47] via-[#B87C72] to-[#9E4A47] bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-semibold bg-[#9E4A47] bg-clip-text text-transparent p-3">
           Find Out If HIFU Is Right for You
         </h2>
         <p className="text-[#828D9C] mt-4 text-lg max-w-2xl mx-auto">

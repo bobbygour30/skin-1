@@ -41,7 +41,7 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           className="flex items-center gap-2"
         >
-          <img src={assets.logo} alt="Logo" className="w-56" />
+          <img src={assets.logo} alt="Logo" className="w-36 sm:w-56" />
         </motion.a>
 
         {/* Center Links */}

@@ -36,7 +36,7 @@ export default function HIFUFeatureComponent({
             className="text-3xl sm:text-4xl font-extrabold tracking-tight"
           >
             Why Choose{' '}
-            <span className="bg-linear-to-r from-[#9E4A47] via-[#B87C72] to-[#FCEBDE] bg-clip-text text-transparent">
+            <span className="bg-[#9E4A47]  bg-clip-text text-transparent">
               HIFU
             </span>{' '}
             at Satya

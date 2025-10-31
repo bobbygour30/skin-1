@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex flex-col sm:flex-row items-start sm:items-center justify-start w-full min-h-[90vh] sm:min-h-screen overflow-hidden mt-[100px]">
+    <section className="relative flex flex-col sm:flex-row items-start sm:items-center justify-start w-full min-h-[90vh] sm:min-h-screen overflow-hidden sm:mt-[100px]">
       {/* === Desktop Background === */}
       <div
         className="absolute inset-0 bg-cover bg-center hidden sm:block"
@@ -31,7 +31,7 @@ const HeroSection = () => {
 
       {/* === Content === */}
       <motion.div
-        className="relative z-10 flex flex-col items-center sm:items-start text-center sm:text-left w-full sm:max-w-[1000px] px-6 sm:px-16 md:px-24 pt-12 sm:pt-0 text-[#FFF8EF] mt-10"
+        className="relative z-10 flex flex-col items-center sm:items-start text-center sm:text-left w-full sm:max-w-[1000px] px-6 sm:px-16 md:px-24 pt-12 sm:pt-0 text-[#FFF8EF] mt-20 sm:mt-0"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}

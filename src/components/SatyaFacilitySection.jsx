@@ -19,7 +19,7 @@ export default function SatyaFacilitySection() {
           viewport={{ once: true }}
           className="space-y-6"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold bg-linear-to-r from-[#9E4A47] via-[#B87C72] to-[#9E4A47] bg-clip-text text-transparent leading-tight">
+          <h2 className="text-4xl md:text-5xl font-semibold bg-[#9E4A47] bg-clip-text text-transparent leading-tight">
             Experience Satya’s World-Class Facility
           </h2>
 

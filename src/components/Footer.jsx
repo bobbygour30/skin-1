@@ -16,11 +16,15 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12"
+          className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 text-center md:text-left"
         >
-          {/* Column 1: About */}
-          <div>
-           <img src={assets.logo} alt="" />
+          {/* Column 1: Logo */}
+          <div className="flex justify-center md:justify-start">
+            <img
+              src={assets.logo}
+              alt="Satya Logo"
+              className="max-w-[180px] md:max-w-[220px] lg:max-w-[260px] h-auto object-contain mx-auto md:mx-0 transition-all duration-300"
+            />
           </div>
 
           {/* Column 2: Quick Links */}
@@ -44,26 +48,21 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold text-[#9E4A47] mb-3">Follow</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="flex items-center gap-2 hover:text-[#B87C72] transition text-[#2B333C]">
-                  <Instagram size={18} /> Instagram
-                </a>
-              </li>
-              <li>
-                <a href="#" className="flex items-center gap-2 hover:text-[#B87C72] transition text-[#2B333C]">
-                  <Youtube size={18} /> YouTube
-                </a>
-              </li>
-              <li>
-                <a href="#" className="flex items-center gap-2 hover:text-[#B87C72] transition text-[#2B333C]">
-                  <Facebook size={18} /> Facebook
-                </a>
-              </li>
-              <li>
-                <a href="#" className="flex items-center gap-2 hover:text-[#B87C72] transition text-[#2B333C]">
-                  <Linkedin size={18} /> LinkedIn
-                </a>
-              </li>
+              {[
+                { icon: <Instagram size={18} />, name: 'Instagram' },
+                { icon: <Youtube size={18} />, name: 'YouTube' },
+                { icon: <Facebook size={18} />, name: 'Facebook' },
+                { icon: <Linkedin size={18} />, name: 'LinkedIn' },
+              ].map((item) => (
+                <li key={item.name}>
+                  <a
+                    href="#"
+                    className="flex justify-center md:justify-start items-center gap-2 hover:text-[#B87C72] transition text-[#2B333C]"
+                  >
+                    {item.icon} {item.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -71,13 +70,13 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold text-[#9E4A47] mb-3">Contact</h4>
             <ul className="space-y-3 text-sm text-[#2B333C]">
-              <li className="flex items-center gap-2">
+              <li className="flex justify-center md:justify-start items-center gap-2">
                 <Phone className="text-[#9E4A47]" size={16} />
                 <a href="tel:+919910094945" className="hover:text-[#B87C72] transition">
                   +91 99100 94945
                 </a>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex justify-center md:justify-start items-center gap-2">
                 <Mail className="text-[#9E4A47]" size={16} />
                 <a
                   href="mailto:info@satyaskinhairsolutions.com"
@@ -109,7 +108,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row justify-between items-center text-sm text-[#828D9C]"
+          className="flex flex-col md:flex-row justify-between items-center text-sm text-[#828D9C] text-center"
         >
           <p>© 2025 Satya Skin & Hair Solutions. All rights reserved.</p>
           <p className="mt-2 md:mt-0 text-xs text-[#B87C72]">

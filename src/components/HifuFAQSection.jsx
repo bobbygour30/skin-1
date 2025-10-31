@@ -72,7 +72,7 @@ export default function HifuFAQSection() {
         viewport={{ once: true }}
         className="relative z-10 text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-semibold bg-linear-to-r from-[#2B333C] via-[#9E4A47] to-[#B87C72] bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-semibold bg-[#9E4A47] bg-clip-text text-transparent p-3">
           Everything You Should Know
         </h2>
       </motion.div>

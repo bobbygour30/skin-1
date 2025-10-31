@@ -55,8 +55,8 @@ export default function HIFUStepByStep() {
       className="relative py-20 px-6 sm:px-10 lg:px-20 overflow-hidden"
       style={{ backgroundColor: COLORS.lightBg }}
     >
-      <div className=" relative">
-        {/* Header */}
+      <div className="relative">
+        {/* HEADER */}
         <header className="mb-12 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 8 }}
@@ -66,12 +66,7 @@ export default function HIFUStepByStep() {
             style={{ color: COLORS.dark }}
           >
             Precision Meets Science —{" "}
-            <span
-              className="text-transparent bg-clip-text bg-linear-to-r"
-              style={{
-                backgroundImage: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.mid})`,
-              }}
-            >
+            <span className="text-transparent bg-clip-text bg-[#9E4A47]">
               Step by Step
             </span>
           </motion.h2>
@@ -88,89 +83,169 @@ export default function HIFUStepByStep() {
           </motion.p>
         </header>
 
-        {/* THREAD TEXTS */}
-        <div className="relative mb-10 w-full">
-          {/* "You are here" - Left side */}
+        {/* THREAD TEXTS (DESKTOP) */}
+        <div className="relative mb-10 w-full hidden lg:block">
           <div
             className="absolute top-28 -left-7 z-0 flex items-center gap-2 text-lg italic font-semibold"
             style={{ color: COLORS.mid }}
           >
-            You are here 
+            You are here
           </div>
 
-          {/* "Result" - Right side */}
           <div
             className="absolute top-28 right-6 z-0 flex items-center gap-2 text-lg italic font-semibold"
             style={{ color: COLORS.mid }}
           >
-             Result
+            Result
           </div>
 
-          {/* ⚡ Continuous Animated Thread */}
-<motion.svg
-  className="absolute top-32 left-0 w-full h-28 -translate-y-1/2 z-0"
-  viewBox="0 0 1200 200"
-  preserveAspectRatio="none"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 1 }}
->
-  <defs>
-    {/* ✨ Gradient for thread color */}
-    <linearGradient id="threadGradient" x1="0%" x2="100%">
-      <stop offset="0%" stopColor="#9E4A47" stopOpacity="0.9" />
-      <stop offset="50%" stopColor="#B87C72" stopOpacity="0.8" />
-      <stop offset="100%" stopColor="#DFDFDD" stopOpacity="0.7" />
-    </linearGradient>
+          {/* ⚡ Thread Line */}
+          <motion.svg
+            className="absolute top-32 left-0 w-full h-28 -translate-y-1/2 z-0"
+            viewBox="0 0 1200 200"
+            preserveAspectRatio="none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <defs>
+              <linearGradient id="threadGradient" x1="0%" x2="100%">
+                <stop offset="0%" stopColor="#9E4A47" stopOpacity="0.9" />
+                <stop offset="50%" stopColor="#B87C72" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#DFDFDD" stopOpacity="0.7" />
+              </linearGradient>
 
-    {/* Animate shimmer effect */}
-    <linearGradient id="animatedGradient" x1="0" x2="100%">
-      <stop offset="0%" stopColor="#FFF8EF">
-        <animate
-          attributeName="offset"
-          values="-1; 1"
-          dur="3s"
-          repeatCount="indefinite"
-        />
-      </stop>
-      <stop offset="50%" stopColor="#FCEBDE" />
-      <stop offset="100%" stopColor="#9E4A47" />
-    </linearGradient>
-  </defs>
+              <linearGradient id="animatedGradient" x1="0" x2="100%">
+                <stop offset="0%" stopColor="#FFF8EF">
+                  <animate
+                    attributeName="offset"
+                    values="-1; 1"
+                    dur="3s"
+                    repeatCount="indefinite"
+                  />
+                </stop>
+                <stop offset="50%" stopColor="#FCEBDE" />
+                <stop offset="100%" stopColor="#9E4A47" />
+              </linearGradient>
+            </defs>
 
-  {/* 🌈 Base Thread Path */}
-  <path
-    d="M50 100 C300 40, 600 160, 900 80 C1050 40, 1150 100, 1150 100"
-    fill="none"
-    stroke="url(#threadGradient)"
-    strokeWidth="3"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    opacity="0.5"
-  />
+            <path
+              d="M50 100 C300 40, 600 160, 900 80 C1050 40, 1150 100, 1150 100"
+              fill="none"
+              stroke="url(#threadGradient)"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              opacity="0.5"
+            />
 
-  {/* ✨ Animated Shimmer Overlay */}
-  <motion.path
-    d="M50 100 C300 40, 600 160, 900 80 C1050 40, 1150 100, 1150 100"
-    fill="none"
-    stroke="url(#animatedGradient)"
-    strokeWidth="4"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeDasharray="15 20"
-    animate={{ strokeDashoffset: [0, -100] }}
-    transition={{
-      duration: 3,
-      ease: "linear",
-      repeat: Infinity,
-    }}
-    style={{
-      filter: "drop-shadow(0 0 6px rgba(158,74,71,0.5))",
-    }}
-  />
+            <motion.path
+              d="M50 100 C300 40, 600 160, 900 80 C1050 40, 1150 100, 1150 100"
+              fill="none"
+              stroke="url(#animatedGradient)"
+              strokeWidth="4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeDasharray="15 20"
+              animate={{ strokeDashoffset: [0, -100] }}
+              transition={{
+                duration: 3,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+              style={{
+                filter: "drop-shadow(0 0 6px rgba(158,74,71,0.5))",
+              }}
+            />
+          </motion.svg>
+        </div>
 
-</motion.svg>
+        {/* ✅ MOBILE THREAD BEHIND CARDS */}
+        <div className="absolute inset-0 flex flex-col items-center lg:hidden z-0">
+          {/* "You are here" top label */}
+          <div
+            className="absolute top-36 text-base italic font-semibold"
+            style={{ color: COLORS.mid }}
+          >
+            You are here
+          </div>
 
+          {/* Vertical Animated Thread */}
+          <motion.svg
+            className="absolute w-20 h-[calc(200%)] -translate-y-1/2 mt-[553px]"
+            viewBox="0 0 100 1000"
+            fill="none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <defs>
+              <linearGradient
+                id="threadGradientMobile"
+                x1="0"
+                x2="0"
+                y1="0"
+                y2="100%"
+              >
+                <stop offset="0%" stopColor="#9E4A47" stopOpacity="0.9" />
+                <stop offset="50%" stopColor="#B87C72" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#DFDFDD" stopOpacity="0.7" />
+              </linearGradient>
+
+              <linearGradient
+                id="animatedGradientMobile"
+                x1="0"
+                x2="0"
+                y1="0"
+                y2="100%"
+              >
+                <stop offset="0%" stopColor="#FFF8EF">
+                  <animate
+                    attributeName="offset"
+                    values="-1; 1"
+                    dur="3s"
+                    repeatCount="indefinite"
+                  />
+                </stop>
+                <stop offset="50%" stopColor="#FCEBDE" />
+                <stop offset="100%" stopColor="#9E4A47" />
+              </linearGradient>
+            </defs>
+
+            <path
+              d="M50 10 C70 250, 30 500, 50 1000"
+              stroke="url(#threadGradientMobile)"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              opacity="0.5"
+            />
+            <motion.path
+              d="M50 10 C70 250, 30 500, 50 1000"
+              stroke="url(#animatedGradientMobile)"
+              strokeWidth="4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeDasharray="15 20"
+              animate={{ strokeDashoffset: [0, -100] }}
+              transition={{
+                duration: 3,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+              style={{
+                filter: "drop-shadow(0 0 6px rgba(158,74,71,0.5))",
+              }}
+            />
+          </motion.svg>
+
+          {/* "Result" bottom label */}
+          <div
+            className="absolute  text-base italic font-semibold mt-[951px]"
+            style={{ color: COLORS.mid }}
+          >
+            Result
+          </div>
         </div>
 
         {/* STEP CARDS */}

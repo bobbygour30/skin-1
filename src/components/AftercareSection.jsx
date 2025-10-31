@@ -14,7 +14,7 @@ export default function AftercareSection() {
   return (
     <section className="relative bg-[#FFF8EF] py-14 px-6 md:px-16 lg:px-24 overflow-hidden">
       {/* Soft rose glow background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(252,235,222,0.6),transparent_70%)] pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(252,235,222,0.6),transparent_70%)] pointer-events-none" /> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
         {/* Image section */}
@@ -52,7 +52,7 @@ export default function AftercareSection() {
         >
           <h2 className="text-4xl md:text-5xl font-semibold text-[#2B333C] leading-tight">
             Aftercare that{' '}
-            <span className="bg-linear-to-r from-[#9E4A47]/90 to-[#B87C72]/80 bg-clip-text text-transparent">
+            <span className="bg-[#9E4A47] bg-clip-text text-transparent">
               Protects Your Glow
             </span>
           </h2>
