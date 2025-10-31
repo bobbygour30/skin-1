@@ -161,8 +161,8 @@ export default function HIFUStepByStep() {
         </div>
 
         {/* ✅ MOBILE THREAD BEHIND CARDS */}
-        <div className="absolute inset-0 flex flex-col items-center lg:hidden z-0">
-          {/* "You are here" top label */}
+        {/* <div className="absolute inset-0 flex flex-col items-center lg:hidden z-0">
+
           <div
             className="absolute top-36 text-base italic font-semibold"
             style={{ color: COLORS.mid }}
@@ -170,7 +170,7 @@ export default function HIFUStepByStep() {
             You are here
           </div>
 
-          {/* Vertical Animated Thread */}
+
           <motion.svg
             className="absolute w-20 h-[calc(200%)] -translate-y-1/2 mt-[553px]"
             viewBox="0 0 100 1000"
@@ -239,14 +239,14 @@ export default function HIFUStepByStep() {
             />
           </motion.svg>
 
-          {/* "Result" bottom label */}
+
           <div
             className="absolute  text-base italic font-semibold mt-[951px]"
             style={{ color: COLORS.mid }}
           >
             Result
           </div>
-        </div>
+        </div> */}
 
         {/* STEP CARDS */}
         <motion.div
