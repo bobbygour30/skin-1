@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React , { useState } from "react";
+import { motion } from "framer-motion";
+import ConsultationPopup from "./ConsultationPopup"; // ✅ Import popup
 
 const container = {
   hidden: { opacity: 0, y: 12 },
@@ -10,14 +11,18 @@ const container = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 export default function HIFUFeatureComponent({
-  imageSrc = 'https://img.freepik.com/free-photo/view-from-rejuvenation-beautiful-woman-enjoying-cosmetology-procedures-beauty-salon-dermatology-hands-blue-glows-healthcare-therapy-botox_197531-2783.jpg',
+  imageSrc = "https://img.freepik.com/free-photo/view-from-rejuvenation-beautiful-woman-enjoying-cosmetology-procedures-beauty-salon-dermatology-hands-blue-glows-healthcare-therapy-botox_197531-2783.jpg",
 }) {
+    const [showPopup, setShowPopup] = useState(false); // ✅ Popup control
   return (
-    <section className="bg-linear-to-br from-[#FFF8EF] via-[#FCEBDE]/60 to-[#FFF8EF] text-[#2B333C] py-10 px-6 sm:px-8 lg:px-16 relative overflow-hidden">
+    <section
+      id="whyhifu"
+      className="bg-linear-to-br from-[#FFF8EF] via-[#FCEBDE]/60 to-[#FFF8EF] text-[#2B333C] py-10 px-6 sm:px-8 lg:px-16 relative overflow-hidden"
+    >
       {/* Soft blush glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(184,124,114,0.12),transparent_70%)] -z-10"></div>
 
@@ -35,47 +40,56 @@ export default function HIFUFeatureComponent({
             variants={fadeUp}
             className="text-3xl sm:text-4xl font-extrabold tracking-tight"
           >
-            Why Choose{' '}
+            Why Choose{" "}
             <span className="bg-[#9E4A47]  bg-clip-text text-transparent">
               HIFU
-            </span>{' '}
+            </span>{" "}
             at Satya
           </motion.h2>
 
           {/* Intro */}
-          <motion.p variants={fadeUp} className="text-[#2B333C]/80 max-w-xl leading-relaxed">
-            High-Intensity Focused Ultrasound precisely targets the SMAS and deep dermis to
-            trigger collagen remodeling — achieving natural, lifted contours without surgery,
-            needles, or downtime.
+          <motion.p
+            variants={fadeUp}
+            className="text-[#2B333C]/80 max-w-xl leading-relaxed"
+          >
+            High-Intensity Focused Ultrasound precisely targets the SMAS and
+            deep dermis to trigger collagen remodeling — achieving natural,
+            lifted contours without surgery, needles, or downtime.
           </motion.p>
 
           {/* Feature badges */}
           <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
             {[
-              'Instant tightening feel',
-              'No downtime',
-              'Safe for Indian skin',
-              'Precise depth cartridges',
+              "Instant tightening feel",
+              "No downtime",
+              "Safe for Indian skin",
+              "Precise depth cartridges",
             ].map((t, i) => (
               <motion.div
                 key={t}
                 whileHover={{ scale: 1.05 }}
                 className="flex items-center gap-3 bg-[#FFF8EF] rounded-full border border-[#DFDFDD] shadow-[0_2px_8px_rgba(184,124,114,0.12)] px-5 py-2 text-sm font-medium transition-all"
                 transition={{
-                  type: 'spring',
+                  type: "spring",
                   stiffness: 280,
                   damping: 18,
                   delay: i * 0.05,
                 }}
               >
-                <span className="w-2 h-2 rounded-full bg-[#9E4A47] inline-block" aria-hidden />
+                <span
+                  className="w-2 h-2 rounded-full bg-[#9E4A47] inline-block"
+                  aria-hidden
+                />
                 <span className="text-[#2B333C]">{t}</span>
               </motion.div>
             ))}
           </motion.div>
 
           {/* Key details grid */}
-          <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl">
+          <motion.div
+            variants={fadeUp}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl"
+          >
             <DetailCard
               title="Instant + Progressive Lift"
               subtitle="Immediate firmness; enhanced lift over 8–12 weeks"
@@ -91,6 +105,10 @@ export default function HIFUFeatureComponent({
           {/* CTA */}
           <motion.div variants={fadeUp} className="flex gap-4 items-center">
             <a
+            onClick={() => {
+                    setShowPopup(true);
+                    setIsOpen(false);
+                  }}
               href="#book"
               className="inline-flex items-center gap-3 bg-linear-to-r from-[#9E4A47] to-[#B87C72] text-white px-6 py-3 rounded-lg shadow-lg hover:scale-[1.03] transition-transform focus:outline-none focus:ring-2 focus:ring-[#B87C72]/40"
             >
@@ -111,7 +129,10 @@ export default function HIFUFeatureComponent({
               </svg>
             </a>
 
-            <a href="#learn" className="text-[#9E4A47] underline text-sm font-medium">
+            <a
+              href="#learn"
+              className="text-[#9E4A47] underline text-sm font-medium"
+            >
               Learn more
             </a>
           </motion.div>
@@ -121,7 +142,7 @@ export default function HIFUFeatureComponent({
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
           className="relative"
         >
@@ -131,22 +152,36 @@ export default function HIFUFeatureComponent({
               alt="HIFU treatment preview"
               className="w-full h-80 object-cover md:h-96"
               whileHover={{ scale: 1.03 }}
-              transition={{ type: 'spring', stiffness: 160 }}
+              transition={{ type: "spring", stiffness: 160 }}
             />
 
             {/* Floating badge */}
             <motion.div
               initial={{ y: 12, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ type: 'spring', stiffness: 90, delay: 0.15 }}
+              transition={{ type: "spring", stiffness: 90, delay: 0.15 }}
               className="absolute left-6 top-6 bg-white/90 backdrop-blur-sm rounded-xl px-3 py-1.5 shadow-md border border-[#DFDFDD] flex items-center gap-2"
             >
-              <svg className="w-5 h-5 text-[#9E4A47]" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.4" />
+              <svg
+                className="w-5 h-5 text-[#9E4A47]"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="5"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                />
               </svg>
               <div className="text-xs">
-                <div className="font-semibold text-[#9E4A47]">Clinically Proven</div>
-                <div className="text-[#828D9C] text-[11px]">Safe for Indian skin</div>
+                <div className="font-semibold text-[#9E4A47]">
+                  Clinically Proven
+                </div>
+                <div className="text-[#828D9C] text-[11px]">
+                  Safe for Indian skin
+                </div>
               </div>
             </motion.div>
           </div>
@@ -163,20 +198,29 @@ export default function HIFUFeatureComponent({
           variants={container}
           className="space-y-4"
         >
-          <motion.h3 variants={fadeUp} className="text-2xl font-semibold text-[#9E4A47]">
+          <motion.h3
+            variants={fadeUp}
+            className="text-2xl font-semibold text-[#9E4A47]"
+          >
             What is HIFU Facial?
           </motion.h3>
-          <motion.p variants={fadeUp} className="text-[#2B333C]/80 leading-relaxed">
-            A non-surgical tightening procedure using focused ultrasound to heat specific
-            skin layers — triggering collagen renewal and natural lift.
+          <motion.p
+            variants={fadeUp}
+            className="text-[#2B333C]/80 leading-relaxed"
+          >
+            A non-surgical tightening procedure using focused ultrasound to heat
+            specific skin layers — triggering collagen renewal and natural lift.
           </motion.p>
 
-          <motion.ul variants={fadeUp} className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <motion.ul
+            variants={fadeUp}
+            className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3"
+          >
             {[
-              'Mild-to-moderate sagging',
-              'Soft jowls & jawline definition',
-              'Neck bands & laxity',
-              'Brow lifting effect',
+              "Mild-to-moderate sagging",
+              "Soft jowls & jawline definition",
+              "Neck bands & laxity",
+              "Brow lifting effect",
             ].map((x) => (
               <li key={x} className="flex items-start gap-3">
                 <svg
@@ -208,7 +252,9 @@ export default function HIFUFeatureComponent({
           className="bg-linear-to-r from-[#9E4A47] to-[#B87C72] text-white rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg"
         >
           <div>
-            <div className="text-lg font-semibold">Ready for a natural lift?</div>
+            <div className="text-lg font-semibold">
+              Ready for a natural lift?
+            </div>
             <div className="text-sm text-[#FCEBDE]">
               Book a consultation today and begin your transformation.
             </div>
@@ -216,13 +262,13 @@ export default function HIFUFeatureComponent({
 
           <div className="flex gap-3">
             <a
-              href="#book"
+              href="#contact"
               className="inline-flex items-center gap-3 bg-white text-[#9E4A47] px-5 py-3 rounded-lg shadow font-medium hover:scale-105 transition"
             >
               Book Now
             </a>
             <a
-              href="#contact"
+              href="tel:+919910094945"
               className="inline-flex items-center gap-2 border border-white/40 rounded-lg px-4 py-3"
             >
               Call Clinic
@@ -230,6 +276,7 @@ export default function HIFUFeatureComponent({
           </div>
         </motion.div>
       </div>
+      <ConsultationPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
     </section>
   );
 }
@@ -239,7 +286,7 @@ function DetailCard({ title, subtitle, icon }) {
   return (
     <div className="bg-[#FFF8EF] rounded-xl p-4 shadow-sm border border-[#DFDFDD] flex gap-4 items-start hover:shadow-[0_4px_20px_rgba(158,74,71,0.1)] transition">
       <div className="w-12 h-12 rounded-lg bg-[#FCEBDE] flex items-center justify-center text-[#9E4A47]">
-        {icon === 'pulse' ? (
+        {icon === "pulse" ? (
           <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
             <path
               d="M3 12h3l2 6 4-18 2 12 1-4h3"
@@ -251,7 +298,13 @@ function DetailCard({ title, subtitle, icon }) {
           </svg>
         ) : (
           <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.4" />
+            <circle
+              cx="12"
+              cy="12"
+              r="4"
+              stroke="currentColor"
+              strokeWidth="1.4"
+            />
           </svg>
         )}
       </div>

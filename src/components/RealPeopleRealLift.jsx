@@ -38,7 +38,7 @@ export default function RealPeopleRealLift() {
   ];
 
   return (
-    <section className="relative bg-[#FFF8EF] py-10 px-6 md:px-16 lg:px-24 text-[#2B333C] mt-10 overflow-hidden">
+    <section id='results' className="relative bg-[#FFF8EF] py-10 px-6 md:px-16 lg:px-24 text-[#2B333C] mt-10 overflow-hidden">
 
       {/* Header */}
       <motion.div

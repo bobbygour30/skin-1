@@ -23,15 +23,15 @@ const App = () => {
       <Navbar />
       <HeroSection />
       <ShowCase />
+      <ScienceBehindHIFU />
+      <DermatologistSection />
       <LogoSlider />
       <HIFUFeatureComponent />
-      <ProtocolPrecisionSection />
-      <ScienceBehindHIFU />
       <HIFUStepByStep />
+      <ProtocolPrecisionSection />
       <RibbonStrip />
       <RealPeopleRealLift />
       <AftercareSection />
-      <DermatologistSection />
       <SatyaFacilitySection />
       <HifuConsultationForm />
       <HifuMediaShowcase />

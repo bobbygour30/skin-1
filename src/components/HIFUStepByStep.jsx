@@ -52,6 +52,7 @@ export default function HIFUStepByStep() {
 
   return (
     <section
+      id="procedure"
       className="relative py-20 px-6 sm:px-10 lg:px-20 overflow-hidden"
       style={{ backgroundColor: COLORS.lightBg }}
     >
@@ -86,14 +87,14 @@ export default function HIFUStepByStep() {
         {/* THREAD TEXTS (DESKTOP) */}
         <div className="relative mb-10 w-full hidden lg:block">
           <div
-            className="absolute top-28 -left-7 z-0 flex items-center gap-2 text-lg italic font-semibold"
+            className="absolute top-28 -left-7 z-0 flex items-center gap-2 text-lg italic font-semibold -rotate-2"
             style={{ color: COLORS.mid }}
           >
             You are here
           </div>
 
           <div
-            className="absolute top-28 right-6 z-0 flex items-center gap-2 text-lg italic font-semibold"
+            className="absolute top-28 right-6 z-0 flex items-center gap-2 text-lg italic font-semibold -mr-6  rotate-3"
             style={{ color: COLORS.mid }}
           >
             Result
@@ -101,7 +102,7 @@ export default function HIFUStepByStep() {
 
           {/* ⚡ Thread Line */}
           <motion.svg
-            className="absolute top-32 left-0 w-full h-28 -translate-y-1/2 z-0"
+            className="absolute top-32 left-0 w-full h-28 -translate-y-1/2 z-0 -ml-3"
             viewBox="0 0 1200 200"
             preserveAspectRatio="none"
             initial={{ opacity: 0 }}
@@ -130,7 +131,7 @@ export default function HIFUStepByStep() {
             </defs>
 
             <path
-              d="M50 100 C300 40, 600 160, 900 80 C1050 40, 1150 100, 1150 100"
+              d="M80 100 C300 50, 600 150, 920 90 C1080 50, 1160 100, 1160 100"
               fill="none"
               stroke="url(#threadGradient)"
               strokeWidth="3"
@@ -140,7 +141,7 @@ export default function HIFUStepByStep() {
             />
 
             <motion.path
-              d="M50 100 C300 40, 600 160, 900 80 C1050 40, 1150 100, 1150 100"
+              d="M80 100 C300 50, 600 150, 920 90 C1080 50, 1160 100, 1160 100"
               fill="none"
               stroke="url(#animatedGradient)"
               strokeWidth="4"
@@ -254,7 +255,7 @@ export default function HIFUStepByStep() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="relative grid lg:grid-cols-4 gap-6 z-10 max-w-7xl mx-auto"
+          className="relative grid lg:grid-cols-4 gap-6 z-10 max-w-6xl mx-auto"
         >
           {steps.map((s) => (
             <motion.article

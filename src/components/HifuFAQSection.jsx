@@ -60,7 +60,7 @@ export default function HifuFAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="relative bg-[#FFF8EF] py-14 px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section id='faq' className="relative bg-[#FFF8EF] py-14 px-6 md:px-16 lg:px-24 overflow-hidden">
       {/* Soft background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(252,235,222,0.5),transparent_70%)] pointer-events-none" />
 

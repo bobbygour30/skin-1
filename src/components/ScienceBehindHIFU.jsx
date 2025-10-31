@@ -1,9 +1,8 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function ScienceBehindHIFU({
-  imageSrc = "https://img.freepik.com/free-vector/realistic-skin-structure-with-its-layers-hairs-vector-illustration_1284-68962.jpg",
-}) {
+export default function ScienceBehindHIFU() {
   const container = {
     hidden: { opacity: 0, y: 12 },
     show: { opacity: 1, y: 0, transition: { staggerChildren: 0.08 } },
@@ -14,9 +13,21 @@ export default function ScienceBehindHIFU({
   };
 
   return (
-    <section className="relative bg-linear-to-b from-[#FFF8EF] via-[#FCEBDE]/60 to-[#FFF8EF] text-[#2B333C] py-10 px-6 sm:px-10 lg:px-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* LEFT SIDE */}
+    <section id="satya" className="relative bg-linear-to-b from-[#FFF8EF] via-[#FCEBDE]/60 to-[#FFF8EF] text-[#2B333C] py-16 px-6 sm:px-10 lg:px-20 overflow-hidden">
+      {/* Soft floating background glow */}
+      <motion.div
+        animate={{ y: [0, 15, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -top-24 right-0 w-72 h-72 bg-[#FCEBDE]/60 rounded-full blur-3xl"
+      />
+      <motion.div
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -bottom-20 left-0 w-96 h-96 bg-[#9E4A47]/20 rounded-full blur-3xl"
+      />
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        {/* LEFT SIDE — SCIENCE SECTION */}
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -40,11 +51,11 @@ export default function ScienceBehindHIFU({
           >
             Focused ultrasound deposits thermal coagulation points at controlled
             depths to tighten the fibromuscular layer and trigger
-            neocollagenesis. Unlike lasers, it bypasses the surface —
-            melanin-safe and season-agnostic.
+            neocollagenesis. Unlike lasers, it bypasses the surface — making it
+            melanin-safe and effective across all seasons.
           </motion.p>
 
-          {/* KEY POINTS */}
+          {/* Key Points */}
           <motion.ul
             variants={fadeUp}
             className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-6"
@@ -81,7 +92,7 @@ export default function ScienceBehindHIFU({
             ))}
           </motion.ul>
 
-          {/* HIGHLIGHT BOX */}
+          {/* Highlight Box */}
           <motion.div
             variants={fadeUp}
             className="mt-8 bg-white/90 rounded-2xl p-6 shadow-xl border border-[#DFDFDD]"
@@ -114,61 +125,95 @@ export default function ScienceBehindHIFU({
                   Collagen Remodeling Timeline
                 </div>
                 <div className="text-sm text-[#828D9C]">
-                  Results strengthen between 3–6 months post-procedure.
+                  Results improve steadily between 3–6 months.
                 </div>
               </div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* RIGHT SIDE */}
+        {/* RIGHT SIDE — CONSULTATION FORM */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
-          className="relative"
+          className="relative flex justify-center"
         >
-          <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-linear-to-br from-white to-[#FFF8EF] border border-[#DFDFDD]">
-            <motion.img
-              src={imageSrc}
-              alt="Skin layers diagram showing HIFU depth"
-              className="w-full h-80 md:h-112 object-cover"
-              whileHover={{ scale: 1.04 }}
-              transition={{ type: "spring", stiffness: 160 }}
-            />
+          <motion.div
+            className="relative z-10 w-full max-w-md bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-[#DFDFDD] overflow-hidden"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+          >
+            {/* Gradient header bar */}
+            <div className="h-2 bg-linear-to-r from-[#9E4A47] via-[#B87C72] to-[#FCEBDE]" />
 
-            {/* Floating Tag */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, type: "spring" }}
-              className="absolute left-6 top-6 bg-white/80 backdrop-blur-md rounded-xl px-4 py-2 shadow-md border border-[#DFDFDD]"
-            >
-              <div className="text-xs font-semibold text-[#2B333C]">
-                Skin Layer Visualization
-              </div>
-              <div className="text-[11px] text-[#828D9C]">
-                Illustrates SMAS & dermal targets
-              </div>
-            </motion.div>
+            <div className="p-8 text-center">
+             
+              <motion.h2
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                className="text-xl font-bold text-[#9E4A47] mb-8"
+              >
+                Find Out If HIFU Is Right for You
+              </motion.h2>
 
-            {/* Soft Pulses */}
-            <div className="absolute right-8 bottom-8 flex items-center justify-center">
-              {[1, 2, 3].map((i) => (
-                <motion.span
-                  key={i}
-                  className="absolute w-12 h-12 rounded-full border border-[#B87C72]/50"
-                  animate={{ scale: [1, 1.3, 1], opacity: [1, 0.3, 1] }}
-                  transition={{
-                    duration: 2.5 + i,
-                    repeat: Infinity,
-                    ease: "easeInOut",
+              <motion.form
+                initial="hidden"
+                whileInView="show"
+                variants={{
+                  show: {
+                    transition: { staggerChildren: 0.1 },
+                  },
+                }}
+                className="space-y-5"
+              >
+                <motion.div variants={fadeUp}>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    className="w-full px-4 py-3 rounded-lg border border-[#DFDFDD] bg-[#FFF8EF]/60 text-[#2B333C] placeholder-[#828D9C] focus:outline-none focus:ring-2 focus:ring-[#9E4A47] focus:bg-white transition"
+                  />
+                </motion.div>
+
+                <motion.div variants={fadeUp}>
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    className="w-full px-4 py-3 rounded-lg border border-[#DFDFDD] bg-[#FFF8EF]/60 text-[#2B333C] placeholder-[#828D9C] focus:outline-none focus:ring-2 focus:ring-[#9E4A47] focus:bg-white transition"
+                  />
+                </motion.div>
+
+                <motion.div variants={fadeUp}>
+                  <textarea
+                    rows="3"
+                    placeholder="Your Message (Optional)"
+                    className="w-full px-4 py-3 rounded-lg border border-[#DFDFDD] bg-[#FFF8EF]/60 text-[#2B333C] placeholder-[#828D9C] focus:outline-none focus:ring-2 focus:ring-[#9E4A47] focus:bg-white transition resize-none"
+                  />
+                </motion.div>
+
+                <motion.button
+                  variants={fadeUp}
+                  whileHover={{
+                    scale: 1.04,
+                    background:
+                      "linear-gradient(90deg, #9E4A47, #B87C72, #FCEBDE)",
                   }}
-                />
-              ))}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: "spring", stiffness: 250 }}
+                  type="submit"
+                  className="w-full py-3 font-semibold rounded-lg text-white bg-linear-to-r from-[#9E4A47] via-[#B87C72] to-[#F87552] shadow-lg hover:shadow-xl transition"
+                >
+                  Request a Callback
+                </motion.button>
+              </motion.form>
             </div>
-          </div>
+
+            {/* Decorative wave */}
+            <div className="absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-[#9E4A47]/10 to-transparent"></div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
