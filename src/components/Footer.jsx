@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Instagram, Youtube, Facebook, Linkedin, Phone, Mail } from 'lucide-react';
+import { Instagram, Youtube, Facebook, Linkedin, Phone, Mail, Globe } from 'lucide-react';
 import assets from '../assets/assets';
 
 export default function Footer() {
@@ -16,7 +16,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 text-center md:text-left"
+          className="flex itms-center flex-col md:flex-row justify-between gap-12"
         >
           {/* Column 1: Logo */}
           <div className="flex justify-center md:justify-start">
@@ -27,26 +27,11 @@ export default function Footer() {
             />
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold text-[#9E4A47] mb-3">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              {['Why HIFU', 'Procedure', 'FAQ', 'Book Consultation'].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="hover:text-[#B87C72] transition-colors duration-200 text-[#2B333C]"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          
 
           {/* Column 3: Follow */}
           <div>
-            <h4 className="text-lg font-semibold text-[#9E4A47] mb-3">Follow</h4>
+            <h4 className="text-lg font-semibold text-[#9E4A47] mb-3 text-center">Follow</h4>
             <ul className="space-y-2 text-sm">
               {[
                 { icon: <Instagram size={18} />, name: 'Instagram' },
@@ -68,8 +53,8 @@ export default function Footer() {
 
           {/* Column 4: Contact */}
           <div>
-            <h4 className="text-lg font-semibold text-[#9E4A47] mb-3">Contact</h4>
-            <ul className="space-y-3 text-sm text-[#2B333C]">
+            <h4 className="text-lg font-semibold text-[#9E4A47] mb-3 text-center">Contact</h4>
+            <ul className="space-y-3 text-sm text-[#2B333C] text-center">
               <li className="flex justify-center md:justify-start items-center gap-2">
                 <Phone className="text-[#9E4A47]" size={16} />
                 <a href="tel:+919910094945" className="hover:text-[#B87C72] transition">
@@ -85,12 +70,13 @@ export default function Footer() {
                   info@satyaskinhairsolutions.com
                 </a>
               </li>
-              <li>
+              <li className="flex justify-center md:justify-start items-center gap-2">
+                <Globe className="text-[#9E4A47]" size={16} />
                 <a
                   href="https://www.satyaskinhairsolutions.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#B87C72] transition"
+                  className="hover:text-[#B87C72] transition "
                 >
                   www.satyaskinhairsolutions.com
                 </a>
