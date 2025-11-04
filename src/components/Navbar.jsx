@@ -56,7 +56,7 @@ const Navbar = () => {
                 sm:px-5 sm:py-2.5 sm:text-sm
               `}
             >
-              Book Consultation
+              Book FREE Consultation
               <FiArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </motion.button>
           </div>
