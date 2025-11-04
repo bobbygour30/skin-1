@@ -72,16 +72,6 @@ export default function ProtocolPrecisionSection({
               </motion.div>
             ))}
           </motion.div>
-
-          {/* Metrics */}
-          <motion.div
-            variants={fadeUp}
-            className="mt-10 flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6 items-stretch"
-          >
-            <MetricBadge value="23+" label="Years" />
-            <MetricBadge value="Class-100" label="OTs" />
-            <MetricBadge value="40+" label="Countries" />
-          </motion.div>
         </motion.div>
 
         {/* RIGHT SECTION */}

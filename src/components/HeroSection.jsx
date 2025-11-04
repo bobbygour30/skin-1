@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import ConsultationPopup from "./ConsultationPopup"; // ✅ import the popup
+import assets from "../assets/assets";
 
 const HeroSection = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -13,7 +14,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center hidden sm:block"
         style={{
           backgroundImage:
-            "url('https://cdn.prod.website-files.com/662e5390115777703fa6e8da/66436c298380209fe979a912_Hero%20Image%20New1-p-2600.webp')",
+            `url('${assets.banner}')`,
         }}
       />
       <div
@@ -23,12 +24,12 @@ const HeroSection = () => {
             "url('https://cdn.prod.website-files.com/662e5390115777703fa6e8da/66437012577dde71828b6739_Hero%20Image%20Mobile%20New-p-1080.webp')",
         }}
       />
-      <div className="absolute inset-0 bg-linear-to-b from-[#2B333C]/90 via-[#2B333C]/70 to-[#9E4A47]/40"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-[#2B333C]/70 via-[#2B333C]/60 to-[#9E4A47]/40"></div>
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[80vw] h-[80vw] sm:w-[60vw] sm:h-[60vw] bg-[radial-gradient(circle,rgba(245,231,209,0.25)_0%,transparent_70%)] blur-3xl pointer-events-none"></div>
 
       {/* === Content === */}
       <motion.div
-        className="relative z-10 flex flex-col items-center sm:items-start text-center sm:text-left w-full sm:max-w-[1000px] px-6 sm:px-16 md:px-24 pt-12 sm:pt-0 text-[#FFF8EF] mt-20 sm:mt-0"
+        className="relative z-10 flex flex-col items-center sm:items-start text-center sm:text-left w-full sm:max-w-[1600px] px-6 sm:px-16 md:px-24 pt-12 sm:pt-0 text-[#FFF8EF] mt-20 sm:mt-0"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -39,16 +40,16 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.3 }}
         >
-          Lift. Tighten. Glow - without surgery or downtime.
+          Worried About Loose Skin, Fine Lines, or a Tired Look?
         </motion.h1>
 
         <motion.h1
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 bg-linear-to-r from-[#FFF8EF] via-[#FCEBDE] to-[#DFDFDD] bg-clip-text text-transparent"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 bg-linear-to-r from-[#FFF8EF] via-[#FCEBDE] to-[#DFDFDD] bg-clip-text text-transparent py-3"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.3 }}
         >
-          When Healthy Skin Feels Like Confidence
+          Discover the Non-Surgical HIFU Facial <br /> Lift, Tighten, and Rejuvenate Naturally
         </motion.h1>
 
         <motion.p
@@ -69,7 +70,7 @@ const HeroSection = () => {
           onClick={() => setShowPopup(true)}
           className="bg-linear-to-r from-[#9E4A47] via-[#B87C72] to-[#9E4A47] text-[#FFF8EF] py-3 px-8 rounded-full font-semibold shadow-[0_4px_15px_rgba(184,124,114,0.3)] transition-all"
         >
-          Book Consultation →
+          Book FREE Consultation →
         </motion.button>
       </motion.div>
 

@@ -1,18 +1,18 @@
 "use client";
 import { motion } from "framer-motion";
 import {
-  LuAward,
-  LuUsers,
-  LuShieldCheck,
-  LuHospital,
-} from "react-icons/lu";
-import { PiStarThin } from "react-icons/pi";
+  Award,
+  Activity,
+  ShieldCheck,
+  Users,
+  Globe2,
+} from "lucide-react"; // using Lucide icons for consistency
 
 const stats = [
-  { label: "23+ Years of Medical Excellence", icon: LuAward },
-  { label: "1,200+ Global Reviews (4.9★)", icon: PiStarThin },
-  { label: "IADVL & ACD Accredited", icon: LuShieldCheck },
-  { label: "Class-100 Operation Theatres", icon: LuHospital },
+  { label: "46 Years of Combined Experience", icon: Award }, // Represents achievement & recognition
+  { label: "50,000+ Successful Procedures", icon: Activity }, // Symbolizes performance, precision, and activity
+  { label: "Member - Academy of Aesthetic Medicines", icon: ShieldCheck }, // Represents verified membership and trust
+  { label: "2,65,000+ Patients Worldwide", icon: Globe2 }, // Represents a global patient base
 ];
 
 export default function ShowCase() {
