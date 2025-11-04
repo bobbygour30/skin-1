@@ -12,7 +12,7 @@ import RealPeopleRealLift from './components/RealPeopleRealLift'
 import AftercareSection from './components/AftercareSection'
 import DermatologistSection from './components/DermatologistSection'
 import HifuFAQSection from './components/HifuFAQSection'
-import HifuConsultationForm from './components/HifuConsultationForm'
+// import HifuConsultationForm from './components/HifuConsultationForm'
 import HifuMediaShowcase from './components/HifuMediaShowcase'
 import SatyaFacilitySection from './components/SatyaFacilitySection'
 import Footer from './components/Footer'
@@ -33,7 +33,7 @@ const App = () => {
       <RealPeopleRealLift />
       <AftercareSection />
       <SatyaFacilitySection />
-      <HifuConsultationForm />
+      {/* <HifuConsultationForm /> */}
       <HifuMediaShowcase />
       <HifuFAQSection />
       <Footer />

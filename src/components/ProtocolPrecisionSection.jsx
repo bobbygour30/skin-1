@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import assets from '../assets/assets';
 
 export default function ProtocolPrecisionSection({
-  imageSrc = 'https://t4.ftcdn.net/jpg/01/34/13/91/360_F_134139194_RaH3m1Tc0qxLw9FiluKfiqK5b6xB142J.jpg',
+  imageSrc = assets.machine,
 }) {
   const container = {
     hidden: { opacity: 0, y: 12 },
