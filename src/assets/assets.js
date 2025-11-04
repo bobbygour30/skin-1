@@ -6,6 +6,7 @@ import slider from './slider.JPG';
 import slider1 from './slider1.JPG';
 import doctor from './doctor.jpg';
 import machine from './machine.jpg';
+import gif from './Gif.mp4';
 const assets = {
     logo,
     place,
@@ -14,7 +15,8 @@ const assets = {
     slider,
     slider1,
     doctor,
-    machine
+    machine,
+    gif
 };
 
 export default assets;
