@@ -21,7 +21,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-top sm:hidden"
         style={{
           backgroundImage:
-            "url('https://cdn.prod.website-files.com/662e5390115777703fa6e8da/66437012577dde71828b6739_Hero%20Image%20Mobile%20New-p-1080.webp')",
+            `url('${assets.bannermobile}')`,
         }}
       />
       <div className="absolute inset-0 bg-linear-to-b from-[#2B333C]/70 via-[#2B333C]/60 to-[#9E4A47]/40"></div>
@@ -44,7 +44,7 @@ const HeroSection = () => {
         </motion.h1>
 
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 bg-linear-to-r from-[#FFF8EF] via-[#FCEBDE] to-[#DFDFDD] bg-clip-text text-transparent py-3"
+          className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-3 bg-linear-to-r from-[#FFF8EF] via-[#FCEBDE] to-[#DFDFDD] bg-clip-text text-transparent sm:py-3"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.3 }}
@@ -53,7 +53,7 @@ const HeroSection = () => {
         </motion.h1>
 
         <motion.p
-          className="text-sm sm:text-base md:text-lg text-[#DFDFDD]/90 mb-8"
+          className="text-xs sm:text-base md:text-lg text-[#DFDFDD]/90 mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.6 }}
