@@ -1,33 +1,62 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Instagram, Youtube } from 'lucide-react';
+import { Instagram, Youtube, Play } from 'lucide-react';
+
+// Helper: Extract YouTube video ID from any valid YouTube URL
+const getYouTubeId = (url) => {
+  try {
+    const urlObj = new URL(url);
+    let id = '';
+
+    // Standard video: youtube.com/watch?v=ID
+    if (urlObj.hostname.includes('youtube.com') && urlObj.searchParams.has('v')) {
+      id = urlObj.searchParams.get('v');
+    }
+    // Shorts: youtube.com/shorts/ID
+    else if (urlObj.hostname.includes('youtube.com') && urlObj.pathname.includes('/shorts/')) {
+      id = urlObj.pathname.split('/shorts/')[1].split('?')[0];
+    }
+    // youtu.be/ID
+    else if (urlObj.hostname.includes('youtu.be')) {
+      id = urlObj.pathname.slice(1).split('?')[0];
+    }
+
+    return id || null;
+  } catch {
+    return null;
+  }
+};
+
+// Helper: Generate embed URL
+const getEmbedUrl = (url) => {
+  const id = getYouTubeId(url);
+  return id ? `https://www.youtube.com/embed/${id}` : null;
+};
 
 export default function HifuMediaShowcase() {
-  const videos = [
+  // Use FULL YouTube URLs — no need to extract IDs!
+  const featuredVideo = {
+    url: 'https://www.youtube.com/watch?v=MWObPqvRRgk&list=TLGGo33LTfPNCkEwNDExMjAyNQ&t=2s', // Replace with your real video
+    title: 'HIFU Live Demo: Full Treatment Session',
+    description: 'Watch our expert dermatologist perform a complete HIFU facial lifting treatment in real-time.',
+  };
+
+  const shorts = [
     {
-      title: 'HIFU Live Demo',
-      description:
-        'Watch an authentic treatment session performed by our expert dermatologists.',
-      thumbnail:
-        'https://media.istockphoto.com/id/501398614/photo/face-skin-care-facial-hydro-microdermabrasion-peeling-treatment.jpg?s=612x612&w=0&k=20&c=8sB-63Okl1ZlF1aHNRtJb7aVzf3qCezOnphkgnW_shY=',
-      link: '#',
+      url: 'https://www.youtube.com/shorts/ClBYxTLC23w', // Replace with real Shorts
+      title: 'Jawline Lift Before & After',
+      description: 'See dramatic contouring results in 60 seconds.',
     },
     {
-      title: 'Jawline Lift Case',
-      description:
-        'Explore before-after progress and contour refinement through HIFU.',
-      thumbnail:
-        'https://media.allure.com/photos/66e1c5700f65602ac1573b07/16:9/w_3500,h_1969,c_limit/Nefertiti%20Lift.jpg',
-      link: '#',
-    },
-    {
+      url: 'https://www.youtube.com/shorts/bo7RgLyn820',
       title: 'Neck Tightening Tips',
-      description:
-        'Post-procedure skincare insights for lasting lift and glow.',
-      thumbnail:
-        'https://emface.net.nz/wp-content/uploads/2025/08/emface-banner-5.jpg',
-      link: '#',
+      description: 'Post-HIFU care for lasting glow.',
+    },
+    {
+      url: 'https://www.youtube.com/shorts/7x7GhR8S_v0',
+      title: 'Patient Reaction Live',
+      description: 'Real emotions during HIFU session.',
     },
   ];
 
@@ -61,14 +90,18 @@ export default function HifuMediaShowcase() {
         className="relative z-10 flex justify-center gap-6 mb-14"
       >
         <a
-          href="#"
+          href="https://instagram.com/yStamped"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 px-5 py-3 rounded-full border border-[#DFDFDD] bg-[#FFF8EF] hover:bg-[#FCEBDE] transition-all shadow-sm"
         >
           <Instagram className="text-[#9E4A47]" size={20} />
           <span className="font-medium text-[#2B333C]">Instagram</span>
         </a>
         <a
-          href="#"
+          href="https://www.youtube.com/@satyaskinandhair"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 px-5 py-3 rounded-full border border-[#DFDFDD] bg-[#FFF8EF] hover:bg-[#FCEBDE] transition-all shadow-sm"
         >
           <Youtube className="text-[#9E4A47]" size={20} />
@@ -76,43 +109,106 @@ export default function HifuMediaShowcase() {
         </a>
       </motion.div>
 
-      {/* Video / Case Cards */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {videos.map((item, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: idx * 0.1 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.03 }}
-            className="group bg-[#FFF8EF] rounded-2xl border border-[#DFDFDD] shadow-[0_6px_20px_rgba(0,0,0,0.05)] overflow-hidden transition-all"
-          >
-            <div className="relative overflow-hidden">
-              <img
-                src={item.thumbnail}
-                alt={item.title}
-                className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-[#9E4A47]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-[#2B333C] group-hover:text-[#9E4A47] transition-colors">
-                {item.title}
-              </h3>
-              <p className="text-[#828D9C] mt-2 text-sm leading-relaxed">
-                {item.description}
-              </p>
-              <a
-                href={item.link}
-                className="inline-block mt-4 text-[#9E4A47] font-medium hover:underline"
+      {/* Main Featured Video */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="relative z-10 max-w-5xl mx-auto mb-12"
+      >
+        <div className="group relative rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)]">
+          <iframe
+            src={getEmbedUrl(featuredVideo.url)}
+            title={featuredVideo.title}
+            className="w-full aspect-video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            
+          </div>
+        </div>
+      </motion.div>
+
+      {/* YouTube Shorts Row */}
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <motion.h3
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-2xl font-semibold text-[#2B333C] mb-6 flex items-center gap-2"
+        >
+          <Youtube className="text-red-600" size={28} />
+          Quick Shorts
+        </motion.h3>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {shorts.map((short, idx) => {
+            const embedUrl = getEmbedUrl(short.url);
+            return (
+              <motion.a
+                key={idx}
+                href={short.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+                className="group block bg-white rounded-2xl overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.06)] transition-all duration-300"
               >
-                Watch Now →
-              </a>
-            </div>
-          </motion.div>
-        ))}
+                <div className="relative aspect-[9/16] bg-black overflow-hidden">
+                  {embedUrl ? (
+                    <iframe
+                      src={embedUrl}
+                      title={short.title}
+                      className="w-full h-full scale-105 group-hover:scale-100 transition-transform duration-700"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                      <Youtube className="text-gray-400" size={40} />
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                    
+                  </div>
+                  <div className="absolute top-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                    SHORT
+                  </div>
+                </div>
+              </motion.a>
+            );
+          })}
+        </div>
       </div>
+
+      {/* CTA */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+        viewport={{ once: true }}
+        className="text-center mt-16"
+      >
+        <a
+          href="https://www.youtube.com/@satyaskinandhair"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#9E4A47] text-white font-medium rounded-full hover:bg-[#8a3d3a] transition-colors shadow-lg"
+        >
+          <Youtube size={20} />
+          Subscribe for More HIFU Transformations
+        </a>
+      </motion.div>
     </section>
   );
 }
