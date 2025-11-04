@@ -1,10 +1,31 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 import assets from '../assets/assets';
 
+const images = [assets.build, assets.build1, assets.build2, assets.build3, assets.build4, assets.build5, assets.build6, assets.build7, assets.build8]; // Add more images as needed
+
 export default function SatyaFacilitySection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const intervalRef = useRef(null);
+
+  // Autoplay logic
+  useEffect(() => {
+    if (isHovered) return;
+
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(intervalRef.current);
+  }, [isHovered]);
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
   return (
     <section className="relative bg-[#FFF8EF] py-10 px-6 md:px-16 lg:px-24 overflow-hidden">
       {/* Soft accent background gradient */}
@@ -67,22 +88,53 @@ export default function SatyaFacilitySection() {
           </div>
         </motion.div>
 
-        {/* Right Image */}
+        {/* Right Image Slider */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           <div className="rounded-3xl overflow-hidden border border-[#DFDFDD] shadow-[0_8px_30px_rgba(0,0,0,0.08)] group">
-            <img
-              src={assets.place}
-              alt="Satya facility interior"
-              className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            {/* Soft rose overlay */}
-            <div className="absolute inset-0 bg-linear-to-t from-[#FCEBDE]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="relative w-full h-[420px] overflow-hidden">
+              {/* Slides Container */}
+              <div
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {images.map((img, index) => (
+                  <div key={index} className="w-full flex-shrink-0">
+                    <img
+                      src={img}
+                      alt={`Satya facility interior ${index + 1}`}
+                      className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Soft rose overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FCEBDE]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Navigation Dots */}
+          <div className="flex justify-center gap-2 mt-4">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`transition-all duration-300 rounded-full ${
+                  index === currentIndex
+                    ? 'w-8 h-2 bg-[#9E4A47]'
+                    : 'w-2 h-2 bg-[#DFDFDD] hover:bg-[#B87C72]'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
         </motion.div>
       </div>
