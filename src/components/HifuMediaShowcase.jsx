@@ -36,11 +36,7 @@ const getEmbedUrl = (url) => {
 
 export default function HifuMediaShowcase() {
   // Use FULL YouTube URLs — no need to extract IDs!
-  const featuredVideo = {
-    url: 'https://www.youtube.com/watch?v=MWObPqvRRgk&list=TLGGo33LTfPNCkEwNDExMjAyNQ&t=2s', // Replace with your real video
-    title: 'HIFU Live Demo: Full Treatment Session',
-    description: 'Watch our expert dermatologist perform a complete HIFU facial lifting treatment in real-time.',
-  };
+
 
   const shorts = [
     {
@@ -99,7 +95,7 @@ export default function HifuMediaShowcase() {
           <span className="font-medium text-[#2B333C]">Instagram</span>
         </a>
         <a
-          href="https://www.youtube.com/@satyaskinandhair"
+          href="https://www.youtube.com/watch?v=MWObPqvRRgk&list=TLGGo33LTfPNCkEwNDExMjAyNQ&t=2s"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-5 py-3 rounded-full border border-[#DFDFDD] bg-[#FFF8EF] hover:bg-[#FCEBDE] transition-all shadow-sm"
@@ -109,29 +105,8 @@ export default function HifuMediaShowcase() {
         </a>
       </motion.div>
 
-      {/* Main Featured Video */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
-        className="relative z-10 max-w-5xl mx-auto mb-12"
-      >
-        <div className="group relative rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)]">
-          <iframe
-            src={getEmbedUrl(featuredVideo.url)}
-            title={featuredVideo.title}
-            className="w-full aspect-video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-            
-          </div>
-        </div>
-      </motion.div>
+    
+      
 
       {/* YouTube Shorts Row */}
       <div className="relative z-10 max-w-6xl mx-auto">
